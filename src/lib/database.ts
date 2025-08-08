@@ -211,7 +211,7 @@ export class VercelPostgresDatabase {
         SELECT * FROM waitlist ORDER BY timestamp DESC
       `;
       
-      return result.rows.map(row => ({
+      return result.rows.map((row: any) => ({
         id: row.id.toString(),
         name: row.name,
         email: row.email,
