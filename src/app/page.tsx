@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { WaitlistForm } from "@/components/WaitlistForm";
-import { FloatingChatWidget } from "@/components/FloatingChatWidget";
+// import { FloatingChatWidget } from "@/components/FloatingChatWidget";
 import {
   Carousel,
   CarouselContent,
@@ -548,8 +548,8 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Floating Chat Widget */}
-      <FloatingChatWidget />
+      {/* Floating Chat Widget temporarily disabled */}
+      {/* <FloatingChatWidget /> */}
     </div>
   );
 }
