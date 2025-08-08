@@ -17,7 +17,7 @@ export interface WaitlistEntry {
 
 // Vercel KV (Redis) Database
 export class VercelKVDatabase {
-  private kv: any;
+  private kv: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
   constructor() {
     // Dynamically import to avoid issues in development
@@ -96,7 +96,7 @@ export class VercelKVDatabase {
 
 // Vercel Postgres Database
 export class VercelPostgresDatabase {
-  private sql: any;
+  private sql: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 
   constructor() {
     this.initPostgres();
