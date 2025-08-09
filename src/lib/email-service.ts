@@ -18,7 +18,7 @@ export class SendGridProvider implements EmailProvider {
   private apiKey: string;
   private fromEmail: string;
 
-  constructor(apiKey: string, fromEmail: string = 'noreply@pawpal.com') {
+  constructor(apiKey: string, fromEmail: string = 'pawpal@getpawpalapp.com') {
     this.apiKey = apiKey;
     this.fromEmail = fromEmail;
   }
@@ -79,7 +79,7 @@ export class ResendProvider implements EmailProvider {
   private apiKey: string;
   private fromEmail: string;
 
-  constructor(apiKey: string, fromEmail: string = 'noreply@pawpal.com') {
+  constructor(apiKey: string, fromEmail: string = 'pawpal@getpawpalapp.com') {
     this.apiKey = apiKey;
     this.fromEmail = fromEmail;
   }
@@ -129,7 +129,7 @@ export class MailchimpProvider implements EmailProvider {
   private serverPrefix: string;
   private fromEmail: string;
 
-  constructor(apiKey: string, serverPrefix: string, fromEmail: string = 'noreply@pawpal.com') {
+  constructor(apiKey: string, serverPrefix: string, fromEmail: string = 'pawpal@getpawpalapp.com') {
     this.apiKey = apiKey;
     this.serverPrefix = serverPrefix;
     this.fromEmail = fromEmail;

@@ -14,7 +14,7 @@ export const emailServiceConfigs = {
   sendgrid: {
     provider: 'sendgrid' as const,
     apiKey: process.env.SENDGRID_API_KEY || '',
-    fromEmail: 'hello@pawpal.com',
+    fromEmail: 'pawpal@getpawpalapp.com',
     fromName: 'PAWPAL Team',
     webhookUrl: process.env.SENDGRID_WEBHOOK_URL
   },
@@ -22,7 +22,7 @@ export const emailServiceConfigs = {
   mailchimp: {
     provider: 'mailchimp' as const,
     apiKey: process.env.MAILCHIMP_API_KEY || '',
-    fromEmail: 'hello@pawpal.com',
+    fromEmail: 'pawpal@getpawpalapp.com',
     fromName: 'PAWPAL Team',
     listId: process.env.MAILCHIMP_LIST_ID,
     webhookUrl: process.env.MAILCHIMP_WEBHOOK_URL
@@ -31,7 +31,7 @@ export const emailServiceConfigs = {
   convertkit: {
     provider: 'convertkit' as const,
     apiKey: process.env.CONVERTKIT_API_KEY || '',
-    fromEmail: 'hello@pawpal.com',
+    fromEmail: 'pawpal@getpawpalapp.com',
     fromName: 'PAWPAL Team',
     listId: process.env.CONVERTKIT_FORM_ID,
     webhookUrl: process.env.CONVERTKIT_WEBHOOK_URL
@@ -40,7 +40,7 @@ export const emailServiceConfigs = {
   brevo: {
     provider: 'brevo' as const,
     apiKey: process.env.BREVO_API_KEY || '',
-    fromEmail: 'hello@pawpal.com',
+    fromEmail: 'pawpal@getpawpalapp.com',
     fromName: 'PAWPAL Team',
     listId: process.env.BREVO_LIST_ID,
     webhookUrl: process.env.BREVO_WEBHOOK_URL
@@ -49,7 +49,7 @@ export const emailServiceConfigs = {
   resend: {
     provider: 'resend' as const,
     apiKey: process.env.RESEND_API_KEY || '',
-    fromEmail: 'hello@pawpal.com',
+    fromEmail: 'pawpal@getpawpalapp.com',
     fromName: 'PAWPAL Team',
     webhookUrl: process.env.RESEND_WEBHOOK_URL
   }
@@ -72,7 +72,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export async function sendWithSendGrid(to: string, subject: string, html: string) {
   const msg = {
     to,
-    from: 'hello@pawpal.com',
+    from: 'pawpal@getpawpalapp.com',
     subject,
     html,
   };
@@ -129,7 +129,7 @@ export async function sendWithBrevo(to: string, subject: string, html: string) {
 
   return await apiInstance.sendTransacEmail({
     to: [{ email: to }],
-    sender: { email: 'hello@pawpal.com', name: 'PAWPAL Team' },
+    sender: { email: 'pawpal@getpawpalapp.com', name: 'PAWPAL Team' },
     subject,
     htmlContent: html
   });
@@ -144,7 +144,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function sendWithResend(to: string, subject: string, html: string) {
   return await resend.emails.send({
-    from: 'hello@pawpal.com',
+    from: 'pawpal@getpawpalapp.com',
     to,
     subject,
     html,
