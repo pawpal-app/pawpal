@@ -23,7 +23,7 @@ export interface ContactSubmission {
 // Email templates for automation sequences
 export const emailTemplates = {
   welcome: {
-    subject: "🐾 Welcome to PAWPAL - You're on the Waitlist!",
+    subject: "🐾 You're on the Waitlist - Welcome to PAWPAL!",
     html: `
       <!DOCTYPE html>
       <html>
@@ -34,7 +34,7 @@ export const emailTemplates = {
         </head>
         <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
           <div style="background: linear-gradient(135deg, #819fa1 0%, #163031 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-            <h1 style="color: white; margin: 0; font-size: 28px;">🐾 Welcome to PAWPAL!</h1>
+            <h1 style="color: white; margin: 0; font-size: 28px;"> Welcome to PAWPAL! 🐾 </h1>
             <p style="color: #f0f9ff; margin: 10px 0 0 0; font-size: 16px;">Your Pet's Personal AI Assistant</p>
           </div>
 
@@ -50,7 +50,7 @@ export const emailTemplates = {
             <p>
 
             <p>
-              You're now oone step closer to <strong>exclusive early access</strong> when we launch. We'll keep you updated with sneak peeks, feature reveals, and tips to get the most out of PawPal when it's ready.
+              You're now one step closer to <strong>exclusive early access</strong> when we launch. We'll keep you updated with sneak peeks, feature reveals, and tips to get the most out of PawPal when it's ready.
             <p>
 
             <p>
