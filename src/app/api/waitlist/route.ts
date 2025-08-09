@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { kv } from '@vercel/kv';
 import { triggerEmailSequence, type WaitlistSignup } from '@/lib/email-automation';
-import { getDatabaseService } from '@/lib/database';
 
 export async function POST(request: NextRequest) {
   try {
@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
       signupSource
     } = body;
 
-    // Validate required fields
+    // --- Validation Section ---
     if (!name || !email || !petName || !petType) {
       return NextResponse.json(
         { error: 'Missing required fields' },
@@ -23,54 +23,44 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create waitlist signup data
-    const signupData: WaitlistSignup = {
+    const signupData = {
       name,
       email,
       petName,
       petType,
       petAge: petAge || '',
-      interests: interests || '',
+      interests: interests || [],
       signupSource: signupSource || 'website',
       timestamp: new Date().toISOString()
     };
 
-    // Store in database
-    const db = getDatabaseService();
-    const stored = await db.storeWaitlistEntry({
-      name: signupData.name,
-      email: signupData.email,
-      petName: signupData.petName,
-      petType: signupData.petType,
-      petAge: signupData.petAge,
-      interests: signupData.interests,
-      signupSource: signupData.signupSource,
-      timestamp: signupData.timestamp
-    });
-
-    if (!stored) {
-      console.warn('⚠️ Failed to store waitlist entry in database');
-    } else {
-      console.log('📝 Waitlist signup stored in database:', signupData.email);
+    // --- Vercel KV Database Section ---
+    // This is the ONLY database code that should be here.
+    try {
+      const key = `waitlist:${email}`;
+      await kv.hset(key, signupData);
+      console.log('📝 Waitlist signup stored in Vercel KV:', signupData.email);
+    } catch (dbError) {
+      // This will now properly log if the KV store fails for any reason.
+      console.warn('⚠️ Failed to store waitlist entry in Vercel KV:', dbError);
     }
 
-    // Trigger email automation sequence
+    // --- Email Section ---
     try {
       await triggerEmailSequence('waitlistWelcome', signupData);
       console.log('✅ Email automation triggered for:', email);
     } catch (emailError) {
       console.error('❌ Email automation error:', emailError);
-      // Don't fail the form submission if email fails
     }
 
+    // --- Success Response ---
     return NextResponse.json({
       success: true,
       message: 'Successfully joined the waitlist!',
-      email: email
     });
 
   } catch (error) {
-    console.error('❌ Waitlist submission error:', error);
+    console.error('❌ An unexpected error occurred:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
