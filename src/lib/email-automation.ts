@@ -23,7 +23,7 @@ export interface ContactSubmission {
 // Email templates for automation sequences
 export const emailTemplates = {
   welcome: {
-    subject: "🐾 Welcome to PAWPAL - Your Pet Care Journey Begins!",
+    subject: "🐾 Welcome to PAWPAL - You're on the Waitlist!",
     html: `
       <!DOCTYPE html>
       <html>
@@ -33,18 +33,36 @@ export const emailTemplates = {
           <title>Welcome to PAWPAL</title>
         </head>
         <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-          <div style="background: linear-gradient(135deg, #66a4a8 0%, #345045 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+          <div style="background: linear-gradient(135deg, #819fa1 0%, #163031 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
             <h1 style="color: white; margin: 0; font-size: 28px;">🐾 Welcome to PAWPAL!</h1>
-            <p style="color: #f0f9ff; margin: 10px 0 0 0; font-size: 16px;">Your AI-powered pet care journey starts here</p>
+            <p style="color: #f0f9ff; margin: 10px 0 0 0; font-size: 16px;">Your Pet's Personal AI Assistant</p>
           </div>
 
           <div style="background: white; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 0 0 10px 10px;">
             <h2 style="color: #345045; margin-top: 0;">Hi {{name}}! 👋</h2>
 
-            <p>Thank you for joining the PAWPAL waitlist! We're thrilled to have you and {{petName}} as part of our growing community of pet lovers.</p>
+            <p>
+              Thank you for joining the <strong>PAWPAL waitlist</strong>! We're so excited to welcome you and {{petName}} to our growing community of <strong>forward-thinking pet parents</strong>. You've officially secured your spot to be <strong>among the first in the world</strong> to experience a new era of pet care.
+            </p>
+
+            <p> 
+              PawPal is your <strong>AI-powered pet care companion</strong> — here to make caring for your animal easier, smarter, and more fun. From personalized care tips and breed recognition to local groomer recommendations and pet health alerts, we're building an app that's <em>all about you and your pet</em>.
+            <p>
+
+            <p>
+              You're now oone step closer to <strong>exclusive early access</strong> when we launch. We'll keep you updated with sneak peeks, feature reveals, and tips to get the most out of PawPal when it's ready.
+            <p>
+
+            <p>
+              In the meantime, give {{petName}} a little extra love from all of us — we can't wait to meet them inside PawPal!
+            <p>
+
+            <p style="margin-top: 30px; color: #2D6063;">
+              - The PawPal Team 🐾
+            <p>
 
             <div style="background: #f0f9ff; border-left: 4px solid #66a4a8; padding: 20px; margin: 20px 0; border-radius: 5px;">
-              <h3 style="color: #345045; margin-top: 0;">🎁 Your Early Access Benefits:</h3>
+              <h3 style="color: #2D6063; margin-top: 0;">🎁 Your Early Access Benefits:</h3>
               <ul style="margin: 0; padding-left: 20px;">
                 <li>First access to PAWPAL's AI features</li>
                 <li>Free premium features for 3 months</li>
@@ -53,8 +71,8 @@ export const emailTemplates = {
               </ul>
             </div>
 
-            <h3 style="color: #345045;">What happens next?</h3>
-            <p>Over the next few days, you'll receive:</p>
+            <h3 style="color: #2D6063;">What happens next?</h3>
+            <p>Over the next few weeks, you'll receive:</p>
             <ul>
               <li>📱 App development updates and launch timeline</li>
               <li>🐾 Personalized pet care tips for {{petType}}s</li>
@@ -63,12 +81,15 @@ export const emailTemplates = {
             </ul>
 
             <div style="text-align: center; margin: 30px 0;">
-              <a href="https://same-fe7vhv1fdj9-latest.netlify.app" style="background: #345045; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Visit PAWPAL Website</a>
+              <a href="https://getpawpalapp.com" style="background: #2D6063; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Visit PAWPAL Website</a>
             </div>
 
             <p style="font-size: 14px; color: #666; margin-top: 30px; text-align: center;">
-              Questions? Just reply to this email - we'd love to hear from you!<br>
-              Follow us: <a href="#" style="color: #66a4a8;">Twitter</a> | <a href="#" style="color: #66a4a8;">Instagram</a> | <a href="#" style="color: #66a4a8;">TikTok</a>
+              Questions? Reach out on our socials - we'd love to hear from you!<br>
+              Follow us: 
+              <a href="https://x.com/getpawpal" style="color: #66a4a8;">Twitter</a> | 
+              <a href="https://www.instagram.com/get.pawpal/" style="color: #66a4a8;">Instagram</a> | 
+              <a href="https://www.tiktok.com/@getpawpal" style="color: #66a4a8;">TikTok</a>
             </p>
           </div>
         </body>
