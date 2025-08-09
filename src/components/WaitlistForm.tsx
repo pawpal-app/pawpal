@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { triggerEmailSequence, type WaitlistSignup } from "@/lib/email-automation";
+// This import is no longer needed on the frontend, as the backend handles the email now.
+// import { triggerEmailSequence, type WaitlistSignup } from "@/lib/email-automation"; 
 import {
   Dialog,
   DialogContent,
@@ -57,8 +58,8 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
     setIsSubmitting(true);
 
     try {
-      // Submit to Vercel API endpoint
-      const response = await fetch("/api/submit-waitlist", {
+      // Submit to the correct Vercel API endpoint
+      const response = await fetch("/api/waitlist", { // <--- THIS IS THE FIX
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
