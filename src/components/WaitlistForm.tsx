@@ -112,11 +112,6 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
           {children}
         </DialogTrigger>
         <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-bold text-[#1b393b] text-center">
-              Join the PAWPAL Waitlist!
-            </DialogTitle>
-          </DialogHeader>
 
           {isSubmitted ? (
             <div className="text-center py-8">
