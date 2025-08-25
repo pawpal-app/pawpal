@@ -1,11 +1,36 @@
 "use client";
 
+// Import the necessary hooks from React and React DOM
+import { useFormState } from "react-dom";
+import { useEffect, useRef } from "react";
+
+// Import your UI components and other utilities
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 
+// Import the server action we created
+import { sendEmail } from "../actions";
+
+// Define the initial state for our form's response
+const initialState = {
+  error: '',
+  success: '',
+};
+
 export default function ContactPage() {
+  // Set up the useFormState hook to manage form state
+  const [state, formAction] = useFormState(sendEmail, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Use an effect to reset the form if the submission was successful
+  useEffect(() => {
+    if (state.success) {
+      formRef.current?.reset();
+    }
+  }, [state.success]);
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header Navigation */}
@@ -20,7 +45,7 @@ export default function ContactPage() {
             />
             <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">PAWPAL</span>
           </Link>
-          {/* Back to Home */}
+          {/* Back to Home Button */}
           <Link href="/">
             <Button variant="outline" className="text-[#345045] border-[#345045] hover:bg-[#345045] hover:text-white">
               ← Back to Home
@@ -40,8 +65,8 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* Send us a Message Form */}
-          <form className="space-y-6 mb-8">
+          {/* Contact Form */}
+          <form ref={formRef} action={formAction} className="space-y-6 mb-8">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                 Name
@@ -80,19 +105,24 @@ export default function ContactPage() {
                 placeholder="How can we help you?"
               />
             </div>
+
+            {/* Display Success or Error Messages */}
+            {state.success && <p className="text-sm text-green-600">{state.success}</p>}
+            {state.error && <p className="text-sm text-red-600">{state.error}</p>}
+
             <Button type="submit" className="w-full bg-[#345045] hover:bg-[#2D6063] text-white">
               Send Message
             </Button>
           </form>
 
-          {/* Direct Email */}
+          {/* Direct Email Link */}
           <div className="text-center text-gray-600 mb-8">
             You can also reach us at:{" "}
             <a
-              href="mailto:support@getpawpal.com"
+              href="mailto:getpawpal.app@gmail.com"
               className="text-[#345045] underline hover:text-[#2D6063] transition-colors"
             >
-              support@getpawpal.com
+              getpawpal.app@gmail.com
             </a>
           </div>
 
