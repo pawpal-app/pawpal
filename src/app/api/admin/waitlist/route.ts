@@ -1,30 +1,76 @@
+export const dynamic = 'force-dynamic';
+
 import { NextRequest, NextResponse } from 'next/server';
-import { getDatabaseService } from '@/lib/database';
+import { kv } from '@vercel/kv';
+import { sendWaitlistWelcomeEmail, type WaitlistSignup } from '@/lib/email-automation';
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    // Simple API key protection
-    const apiKey = request.headers.get('x-api-key');
-    const expectedApiKey = process.env.ADMIN_API_KEY;
+    const body = await request.json();
+    const {
+      name,
+      email,
+      petName,
+      petType,
+      petAge,
+      interests,
+      signupSource
+    } = body;
 
-    if (!expectedApiKey || apiKey !== expectedApiKey) {
+    // --- Validation Section ---
+    if (!name || !email || !petName || !petType) {
       return NextResponse.json(
-        { error: 'Unauthorized' },
-        { status: 401 }
+        { error: 'Missing required fields' },
+        { status: 400 }
       );
     }
 
-    const db = getDatabaseService();
-    const entries = await db.getAllWaitlistEntries();
+    // --- Vercel KV Database Section ---
+    const dbSignupData = {
+      name,
+      email,
+      petName,
+      petType,
+      petAge: petAge || '',
+      interests: interests || [],
+      signupSource: signupSource || 'website',
+      timestamp: new Date().toISOString()
+    };
+    
+    try {
+      const key = `waitlist:${email}`;
+      await kv.hset(key, dbSignupData);
+      console.log('📝 Waitlist signup stored in Vercel KV:', email);
+    } catch (dbError) {
+      console.warn('⚠️ Failed to store waitlist entry in Vercel KV:', dbError);
+    }
 
+    // --- Email Section ---
+    try {
+      const emailResult = await sendWaitlistWelcomeEmail({
+        name,
+        email,
+        petName,
+        petType,
+      });
+
+      if (emailResult.success) {
+        console.log(`✅ Welcome email sent successfully to ${email}. Message ID: ${emailResult.messageId}`);
+      } else {
+        console.error(`❌ Failed to send welcome email for ${email}:`, emailResult.error);
+      }
+    } catch (emailError) {
+      console.error('❌ An unexpected error occurred during the email process:', emailError);
+    }
+
+    // --- Success Response ---
     return NextResponse.json({
       success: true,
-      count: entries.length,
-      entries: entries
+      message: 'Successfully joined the waitlist!',
     });
 
   } catch (error) {
-    console.error('❌ Admin API error:', error);
+    console.error('❌ An unexpected error occurred in the POST handler:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
