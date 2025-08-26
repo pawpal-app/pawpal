@@ -12,6 +12,29 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "PawPal",
   description: "Your Pet's Personal AI Assistant",
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      {
+        url: '/pawpal-circle-logo.png',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        url: '/pawpal-circle-logo.png',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+    ],
+    shortcut: '/pawpal-circle-logo.png',
+    apple: [
+      {
+        url: '/pawpal-circle-logo.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
