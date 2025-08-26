@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-// ✅ 1. CHECK THIS IMPORT: Make sure this line exists and the path is correct.
-import { Header } from "@/components/layout/Header";
+// Import Header component using relative path for better build compatibility
+import { Header } from "../components/layout/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 

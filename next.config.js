@@ -1,5 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Ensure proper path resolution during build
+  experimental: {
+    esmExternals: true,
+  },
+  // Webpack configuration for better path resolution
+  webpack: (config, { isServer }) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': require('path').resolve(__dirname, 'src'),
+    };
+    return config;
+  },
   images: {
     unoptimized: true,
     domains: [
