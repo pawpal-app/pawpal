@@ -18,29 +18,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen scroll-smooth">
-      {/* Header Navigation */}
-      <header className="relative z-10 px-4 py-4 lg:px-8">
-        <nav className="flex items-center justify-between max-w-7xl mx-auto">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <img
-              src="https://ugc.same-assets.com/lDb0fXjL-jpPYAZZTJOdg7au2HDrnHxv.png"
-              alt="PAWPAL Logo"
-              className="h-8 w-8 object-cover"
-            />
-            <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">PAWPAL</span>
-          </div>
-
-          {/* Navigation Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-[#345045] transition-colors">Home</a>
-            <a href="#features" className="text-gray-700 hover:text-[#345045] transition-colors">Features</a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-[#345045] transition-colors">How it Works</a>
-            <a href="#testimonials" className="text-gray-700 hover:text-[#345045] transition-colors">Testimonials</a>
-            <a href="#waitlist" className="text-gray-700 hover:text-[#345045] transition-colors">Waitlist</a>
-          </div>
-        </nav>
-      </header>
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen bg-gradient-to-br from-[#66a4a8] via-[#91a6a6] to-[#eff3f3] overflow-hidden">
