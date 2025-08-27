@@ -87,12 +87,12 @@ export default function Home() {
             <div className="space-y-8">
               {[
                 {
-                  icon: "📔",
+                  icon: "📓",
                   title: "Pet Diary & Mood Log",
                   description: "Capture precious memories and monitor your pet's well-being. Upload daily photos, log their mood and energy levels, and look back on your journey together with a built-in calendar."
                 },
                 {
-                  icon: "✅",
+                  icon: "📋",
                   title: "AI-Powered Daily Plan",
                   description: "Say goodbye to guesswork. Our AI generates a comprehensive, personalized to-do list for your pet each day, covering everything from feeding and exercise to training and health reminders."
                 },
@@ -238,27 +238,27 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="icon-placeholder text-white text-2xl font-bold">1</div>
               </div>
               <h4 className="text-xl font-bold text-[#163031] mb-3">Download & Get Started</h4>
               <p className="text-gray-700 leading-relaxed">
-                Find Pawpal on the iOS App Store. Create your account in a few simple steps to begin your journey towards more organized and joyful pet parenthood.
+                Find PawPal on the iOS App Store. Create your account in a few simple steps to begin your journey and experience the future of pet care.
               </p>
             </div>
             
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="icon-placeholder text-white text-2xl font-bold">2</div>
               </div>
               <h4 className="text-xl font-bold text-[#163031] mb-3">Build Your Pet's Profile</h4>
               <p className="text-gray-700 leading-relaxed">
-                Add each of your pets to the app. Our system is designed for every kind of companion—tell us their name, breed, age, and lifestyle so we can get to know them.
+                Add each of your pets to the app. Our system is designed for every kind of companion. Tell us their name, breed, age, and lifestyle so we can get to know them.
               </p>
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="icon-placeholder text-white text-2xl font-bold">3</div>
               </div>
               <h4 className="text-xl font-bold text-[#163031] mb-3">Unlock Your AI To-Do List</h4>
@@ -268,7 +268,7 @@ export default function Home() {
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="icon-placeholder text-white text-2xl font-bold">4</div>
               </div>
               <h4 className="text-xl font-bold text-[#163031] mb-3">Chat with Your AI Assistant</h4>
@@ -278,7 +278,7 @@ export default function Home() {
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="icon-placeholder text-white text-2xl font-bold">5</div>
               </div>
               <h4 className="text-xl font-bold text-[#163031] mb-3">Log Your Daily Diary</h4>
@@ -288,12 +288,12 @@ export default function Home() {
             </div>
 
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
                 <div className="icon-placeholder text-white text-2xl font-bold">6</div>
               </div>
               <h4 className="text-xl font-bold text-[#163031] mb-3">Connect with Friends</h4>
               <p className="text-gray-700 leading-relaxed">
-                Add friends and family to your circle! Share updates, coordinate care for a shared pet, or simply enjoy seeing the adorable moments your friends are sharing in their own diaries.
+                Add friends and family to your circle! Share updates or simply enjoy seeing the adorable moments your friends are sharing in their own diaries.
               </p>
             </div>
           </div>
@@ -305,10 +305,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
-              Why Pawpal?
+              Why PawPal?
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              More Than Just an App, It's Peace of Mind.
+            One smart app for daily routines, health tracking, and personalized care.
             </p>
           </div>
 
@@ -366,7 +366,7 @@ export default function Home() {
               Loved by Pet Parents Everywhere
             </h2>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              See how PAWPAL has transformed the way thousands of pet owners care for their beloved companions
+              See how PawPal has transformed the way pet owners care for their beloved companions
             </p>
           </div>
 
