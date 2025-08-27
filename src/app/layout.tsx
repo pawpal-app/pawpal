@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "PawPal",
   description: "Your Pet's Personal AI Assistant",
   manifest: '/manifest.json',
+  viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
   icons: {
     icon: [
       {

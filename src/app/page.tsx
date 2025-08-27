@@ -30,20 +30,20 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative min-h-screen bg-gradient-to-br from-[#66a4a8] via-[#91a6a6] to-[#eff3f3] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 flex items-center min-h-screen">
-          <div className="grid lg:grid-cols-2 gap-12 items-center w-full py-20">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full py-12 lg:py-20">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl lg:text-6xl leading-tight mb-6 text-[#ffffff]">
+              <h1 className="text-3xl lg:text-5xl leading-tight mb-6 text-[#ffffff]">
                 <span className="font-bold">Meet PawPal.</span><br />
-                <span className="text-2xl lg:text-4xl font-normal">Your Pet's Personal AI Assistant</span>
+                <span className="text-xl lg:text-3xl font-normal">Your Pet's Personal AI Assistant</span>
               </h1>
               <div className="w-20 h-1 bg-[#345045] mx-auto lg:mx-0 mb-8"></div>
-              <p className="text-2xl mb-8 max-w-md mx-auto lg:mx-0 text-[#ffffff]">
+              <p className="text-lg lg:text-xl mb-8 max-w-md mx-auto lg:mx-0 text-[#ffffff]">
                 Your complete pet care companion, from personalized plans to instant answers
               </p>
               <WaitlistForm variant="hero">
                 <Button
-                  className="bg-white text-[#345045] hover:bg-gray-50 border border-gray-300 px-8 py-6 text-lg rounded-none"
+                  className="bg-white text-[#345045] hover:bg-gray-50 border border-gray-300 px-6 lg:px-8 py-4 lg:py-6 text-base lg:text-lg rounded-none"
                   size="lg"
                 >
                   Join the Waitlist!
@@ -56,7 +56,7 @@ export default function Home() {
               <img
                 src="https://ext.same-assets.com/482647744/2552424779.png"
                 alt="PAWPAL App Screenshots"
-                className="max-w-full h-auto w-[500px] lg:w-[600px]"
+                className="max-w-full h-auto w-[300px] sm:w-[400px] lg:w-[600px]"
               />
             </div>
           </div>
@@ -71,20 +71,20 @@ export default function Home() {
       </section>
 
       {/* Interactive Features Showcase */}
-      <section id="features" className="py-20 bg-white">
+      <section id="features" className="py-8 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+          <div className="text-center mb-8 lg:mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#163031] mb-6">
               YOUR PARTNER IN PET PARENTHOOD
             </h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               One smart app for daily routines, health tracking, and personalized care.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
             {/* Left Column - Feature Descriptions */}
-            <div className="space-y-8">
+            <div className="space-y-4 lg:space-y-6">
               {[
                 {
                   icon: "📓",
@@ -110,21 +110,21 @@ export default function Home() {
                 <div
                   key={index}
                   onClick={() => scrollTo(index)}
-                  className={`p-6 rounded-lg transition-all duration-300 cursor-pointer ${
+                  className={`p-3 lg:p-4 rounded-lg transition-all duration-300 cursor-pointer ${
                     activeIndex === index
                       ? "bg-gradient-to-r from-[#66a4a8]/10 to-[#345045]/10 border border-[#66a4a8]/20 shadow-lg"
                       : "opacity-60 hover:opacity-80"
                   }`}
                 >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-3xl">{feature.icon}</div>
+                  <div className="flex items-start space-x-2 lg:space-x-3">
+                    <div className="text-xl lg:text-2xl">{feature.icon}</div>
                     <div>
-                      <h3 className={`text-xl font-bold mb-2 transition-colors ${
+                      <h3 className={`text-sm lg:text-base font-bold mb-1 lg:mb-2 transition-colors ${
                         activeIndex === index ? "text-[#345045]" : "text-gray-700"
                       }`}>
                         {feature.title}
                       </h3>
-                      <p className={`text-sm leading-relaxed transition-colors ${
+                      <p className={`text-xs leading-relaxed transition-colors ${
                         activeIndex === index ? "text-gray-700" : "text-gray-500"
                       }`}>
                         {feature.description}
@@ -138,7 +138,7 @@ export default function Home() {
             {/* Right Column - Image Carousel */}
             <div className="relative">
               <Carousel
-                className="w-full max-w-md mx-auto"
+                className="w-full max-w-xs lg:max-w-sm mx-auto"
                 setApi={(api) => {
                   setCarouselApi(api);
                   if (api) {
@@ -225,74 +225,74 @@ export default function Home() {
       </div>
 
       {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 bg-white">
+      <section id="how-it-works" className="py-8 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+          <div className="text-center mb-8 lg:mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#163031] mb-6">
               How It Works
             </h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
               Your Pet's Best Life is a Few Taps Away. Follow these steps to unlock a smarter way to care for your best friend.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="icon-placeholder text-white text-2xl font-bold">1</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
+            <div className="text-center p-3 lg:p-4">
+              <div className="w-8 h-8 lg:w-12 lg:h-12 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                <div className="icon-placeholder text-white text-sm lg:text-lg font-bold">1</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Download & Get Started</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="text-sm lg:text-base font-bold text-[#163031] mb-2">Download & Get Started</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Find PawPal on the iOS App Store. Create your account in a few simple steps to begin your journey and experience the future of pet care.
               </p>
             </div>
             
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="icon-placeholder text-white text-2xl font-bold">2</div>
+            <div className="text-center p-3 lg:p-4">
+              <div className="w-8 h-8 lg:w-12 lg:h-12 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                <div className="icon-placeholder text-white text-sm lg:text-lg font-bold">2</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Build Your Pet's Profile</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="text-sm lg:text-base font-bold text-[#163031] mb-2">Build Your Pet's Profile</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Add each of your pets to the app. Our system is designed for every kind of companion. Tell us their name, breed, age, and lifestyle so we can get to know them.
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="icon-placeholder text-white text-2xl font-bold">3</div>
+            <div className="text-center p-3 lg:p-4">
+              <div className="w-8 h-8 lg:w-12 lg:h-12 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                <div className="icon-placeholder text-white text-sm lg:text-lg font-bold">3</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Unlock Your AI To-Do List</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="text-sm lg:text-base font-bold text-[#163031] mb-2">Unlock Your AI To-Do List</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Once your pet's profile is complete, our AI instantly generates a personalized to-do list. This dynamic schedule adapts to your pet's needs, suggesting everything from feeding times to vet check-ups.
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="icon-placeholder text-white text-2xl font-bold">4</div>
+            <div className="text-center p-3 lg:p-4">
+              <div className="w-8 h-8 lg:w-12 lg:h-12 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                <div className="icon-placeholder text-white text-sm lg:text-lg font-bold">4</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Chat with Your AI Assistant</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="text-sm lg:text-base font-bold text-[#163031] mb-2">Chat with Your AI Assistant</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Have a question? Just ask. Your AI assistant is available 24/7 to help with anything from "What's the best food for a senior cat?" to "Fun training ideas for a puppy."
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="icon-placeholder text-white text-2xl font-bold">5</div>
+            <div className="text-center p-3 lg:p-4">
+              <div className="w-8 h-8 lg:w-12 lg:h-12 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                <div className="icon-placeholder text-white text-sm lg:text-lg font-bold">5</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Log Your Daily Diary</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="text-sm lg:text-base font-bold text-[#163031] mb-2">Log Your Daily Diary</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Capture precious moments and track important health notes in the daily diary. It's the perfect place to log meals, monitor behavior, or just save a cute photo from your afternoon walk.
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4">
-                <div className="icon-placeholder text-white text-2xl font-bold">6</div>
+            <div className="text-center p-3 lg:p-4">
+              <div className="w-8 h-8 lg:w-12 lg:h-12 bg-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-2 lg:mb-3">
+                <div className="icon-placeholder text-white text-sm lg:text-lg font-bold">6</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Connect with Friends</h4>
-              <p className="text-gray-700 leading-relaxed">
+              <h4 className="text-sm lg:text-base font-bold text-[#163031] mb-2">Connect with Friends</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Add friends and family to your circle! Share updates or simply enjoy seeing the adorable moments your friends are sharing in their own diaries.
               </p>
             </div>
@@ -301,56 +301,56 @@ export default function Home() {
       </section>
 
       {/* Why Pawpal Section */}
-      <section id="why-pawpal" className="py-20 bg-[#f8fcfc]">
+      <section id="why-pawpal" className="py-12 lg:py-20 bg-[#f8fcfc]">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#163031] mb-8">
               Why PawPal?
             </h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg lg:text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
             One smart app for daily routines, health tracking, and personalized care.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-xl font-bold text-[#163031] mb-3">All-in-One Management</h4>
-              <p className="text-gray-700 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2">All-in-One Management</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Track vet appointments, vaccination records, feeding schedules, and daily notes all in one place. No more scattered reminders or forgotten details.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Truly Personalized AI Care</h4>
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2">Truly Personalized AI Care</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Pawpal creates a custom care plan based on your pet's specific breed, age, and lifestyle. Our smart system learns your habits and adapts, so you only see what's important.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Never Miss a Thing</h4>
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2">Never Miss a Thing</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Receive intelligent reminders for vaccinations, grooming appointments, medication doses, and more. We help you stay proactive about your pet's well-being.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Designed for Every Kind of Pet</h4>
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2">Designed for Every Kind of Pet</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Birds, reptiles, rabbits, and fish deserve great care, too. Pawpal is built for all kinds of companions, not just the furry ones.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-xl font-bold text-[#163031] mb-3">More Fun, Less Stress</h4>
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2">More Fun, Less Stress</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 With engaging tips, fun activity ideas, and a supportive community, we turn pet care from a chore into a joyful bonding experience.
               </p>
             </div>
 
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <h4 className="text-xl font-bold text-[#163031] mb-3">Your Partner in Pet Parenthood</h4>
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2">Your Partner in Pet Parenthood</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed">
                 Pawpal gives you the confidence that you're providing the best care possible. No more guessing, no more gaps—just smart support every step of the way.
               </p>
             </div>
@@ -359,97 +359,97 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-[#eff3f3]" id="testimonials">
+      <section className="py-12 lg:py-20 bg-[#eff3f3]" id="testimonials">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#163031] mb-8">
               Loved by Pet Parents Everywhere
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto">
               See how PawPal has transformed the way pet owners care for their beloved companions
             </p>
           </div>
 
           {/* Top Row - 3 Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mb-8">
             {/* Testimonial 1 - Sarah M. */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold mr-3">
+            <div className="bg-white rounded-xl p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <div className="flex items-center mb-2 lg:mb-3">
+                <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-gradient-to-br from-pink-400 to-purple-500 flex items-center justify-center text-white font-bold mr-2 lg:mr-3">
                   SM
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 text-sm">Sarah M.</h4>
+                  <h4 className="font-semibold text-gray-800 text-xs lg:text-sm">Sarah M.</h4>
                 </div>
               </div>
-              <blockquote className="text-gray-800 text-lg leading-relaxed font-medium">
+              <blockquote className="text-gray-800 text-sm lg:text-base leading-relaxed font-medium">
                 "This app literally saved my dog's quality of life!"
               </blockquote>
             </div>
 
             {/* Testimonial 2 - Mike R. */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-teal-500 flex items-center justify-center text-white font-bold mr-3">
+            <div className="bg-white rounded-xl p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <div className="flex items-center mb-2 lg:mb-3">
+                <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-gradient-to-br from-blue-400 to-teal-500 flex items-center justify-center text-white font-bold mr-2 lg:mr-3">
                   MR
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 text-sm">Mike R.</h4>
+                  <h4 className="font-semibold text-gray-800 text-xs lg:text-sm">Mike R.</h4>
                 </div>
               </div>
-              <blockquote className="text-gray-800 text-lg leading-relaxed font-medium">
+              <blockquote className="text-gray-800 text-sm lg:text-base leading-relaxed font-medium">
                 "Managing three cats used to be chaos. PAWPAL keeps track of everyone's schedules."
               </blockquote>
             </div>
 
             {/* Testimonial 3 - Emma L. */}
-            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white font-bold mr-3">
+            <div className="bg-white rounded-xl p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <div className="flex items-center mb-2 lg:mb-3">
+                <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white font-bold mr-2 lg:mr-3">
                   EL
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-800 text-sm">Emma L.</h4>
+                  <h4 className="font-semibold text-gray-800 text-xs lg:text-sm">Emma L.</h4>
                 </div>
               </div>
-              <blockquote className="text-gray-800 text-lg leading-relaxed font-medium">
+              <blockquote className="text-gray-800 text-sm lg:text-base leading-relaxed font-medium">
                 "Finally, an app that understands bird care! My cockatiel has never been happier."
               </blockquote>
             </div>
           </div>
 
           {/* Bottom Row - 2 Cards Centered */}
-          <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl">
+                      <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 max-w-2xl">
               {/* Testimonial 4 - Jessica T. */}
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold mr-3">
+              <div className="bg-white rounded-xl p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+                <div className="flex items-center mb-2 lg:mb-3">
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center text-white font-bold mr-2 lg:mr-3">
                     JT
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800 text-sm">Jessica T.</h4>
+                    <h4 className="font-semibold text-gray-800 text-xs lg:text-sm">Jessica T.</h4>
                   </div>
                 </div>
-                <blockquote className="text-gray-800 text-lg leading-relaxed font-medium">
+                <blockquote className="text-gray-800 text-sm lg:text-base leading-relaxed font-medium">
                   "With 2 dogs, 1 cat, and a bearded dragon, PAWPAL keeps me sane!"
                 </blockquote>
               </div>
 
               {/* Testimonial 5 - Alex M. */}
-              <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white font-bold mr-3">
+              <div className="bg-white rounded-xl p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+                <div className="flex items-center mb-2 lg:mb-3">
+                  <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center text-white font-bold mr-2 lg:mr-3">
                     AM
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-800 text-sm">Alex M.</h4>
-                  </div>
+                    <h4 className="font-semibold text-gray-800 text-xs lg:text-sm">Alex M.</h4>
                 </div>
-                <blockquote className="text-gray-800 text-lg leading-relaxed font-medium">
-                  "PAWPAL is the first app that truly understands reptile care. The reminders are spot on!"
-                </blockquote>
               </div>
+              <blockquote className="text-gray-800 text-sm lg:text-base leading-relaxed font-medium">
+                "PAWPAL is the first app that truly understands reptile care. The reminders are spot on!"
+              </blockquote>
+            </div>
             </div>
           </div>
 
@@ -461,41 +461,41 @@ export default function Home() {
       </div>
 
       {/* Our Promise Section */}
-      <section id="our-promise" className="py-20 bg-[#eff3f3]">
+      <section id="our-promise" className="py-12 lg:py-20 bg-[#eff3f3]">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-[#163031] mb-8">
               Our Promise to You and Your Pet
             </h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="icon-placeholder text-white text-2xl">👨‍⚕️</div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <div className="w-10 h-10 lg:w-14 lg:h-14 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                <div className="icon-placeholder text-white text-base lg:text-xl">👨‍⚕️</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-4 text-center">Guided by Experts</h4>
-              <p className="text-gray-700 leading-relaxed text-center">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2 lg:mb-3 text-center">Guided by Experts</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed text-center">
                 Our care frameworks and AI are developed in consultation with veterinary professionals to ensure you receive safe, trusted, and up-to-date advice for your pet's well-being.
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="icon-placeholder text-white text-2xl">🧠</div>
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <div className="w-10 h-10 lg:w-14 lg:h-14 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                <div className="icon-placeholder text-white text-base lg:text-xl">🧠</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-4 text-center">Intelligently Personalized</h4>
-              <p className="text-gray-700 leading-relaxed text-center">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2 lg:mb-3 text-center">Intelligently Personalized</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed text-center">
                 We believe every pet is unique. Pawpal goes beyond generic advice, using smart AI to create a truly personalized care plan that adapts to your pet's specific breed, age, and lifestyle.
               </p>
             </div>
             
-            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-6">
-                <div className="icon-placeholder text-white text-2xl">❤️</div>
+            <div className="bg-white rounded-lg p-3 lg:p-5 shadow-lg hover:shadow-xl transition-all duration-300 max-w-sm lg:max-w-none mx-auto">
+              <div className="w-10 h-10 lg:w-14 lg:h-14 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-3 lg:mb-4">
+                <div className="icon-placeholder text-white text-base lg:text-xl">❤️</div>
               </div>
-              <h4 className="text-xl font-bold text-[#163031] mb-4 text-center">Designed for Pet People</h4>
-              <p className="text-gray-700 leading-relaxed text-center">
+              <h4 className="text-base lg:text-lg font-bold text-[#163031] mb-2 lg:mb-3 text-center">Designed for Pet People</h4>
+              <p className="text-xs lg:text-sm text-gray-700 leading-relaxed text-center">
                 We're a team of passionate pet lovers building the tool we've always wanted. Every feature is designed to be intuitive, reduce stress, and give you more quality time with your companion.
               </p>
             </div>
@@ -508,14 +508,14 @@ export default function Home() {
 
 
       {/* Final CTA Section */}
-      <section className="py-20 text-white bg-[#2D6063]" id="waitlist">
+      <section className="py-12 lg:py-20 text-white bg-[#2D6063]" id="waitlist">
         <div className="max-w-4xl mx-auto px-4 lg:px-8 text-center">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-8">
             You spoil them already. Why not make it official?
           </h2>
           <WaitlistForm variant="cta">
             <Button
-              className="bg-white text-[#345045] hover:bg-gray-50 px-12 py-6 text-xl font-semibold rounded-none"
+              className="bg-white text-[#345045] hover:bg-gray-50 px-8 lg:px-12 py-4 lg:py-6 text-lg lg:text-xl font-semibold rounded-none"
               size="lg"
             >
               Get Early Access
