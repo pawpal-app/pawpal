@@ -33,42 +33,21 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header Navigation */}
-      <header className="w-full bg-white border-b px-4 py-4 lg:px-8">
-        <nav className="flex items-center justify-between max-w-2xl mx-auto">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <img
-              src="https://ugc.same-assets.com/lDb0fXjL-jpPYAZZTJOdg7au2HDrnHxv.png"
-              alt="PAWPAL Logo"
-              className="h-8 w-8 object-cover"
-            />
-            <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">PAWPAL</span>
-          </Link>
-          {/* Back to Home Button */}
-          <Link href="/">
-            <Button variant="outline" className="text-[#345045] border-[#345045] hover:bg-[#345045] hover:text-white">
-              ← Back to Home
-            </Button>
-          </Link>
-        </nav>
-      </header>
-
       {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center py-16 px-4">
-        <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg p-8">
+      <main className="flex-1 flex items-center justify-center py-8 lg:py-12 px-4">
+        <div className="w-full max-w-lg lg:max-w-2xl bg-white rounded-lg shadow-lg p-4 lg:p-6">
           {/* Title and Subtitle */}
-          <div className="mb-10 text-center">
-            <h1 className="text-4xl font-bold text-[#2D6063] mb-2">Contact Support</h1>
-            <p className="text-lg text-gray-600">
+          <div className="mb-6 lg:mb-8 text-center">
+            <h1 className="text-2xl lg:text-3xl font-bold text-[#2D6063] mb-2">Contact Support</h1>
+            <p className="text-sm lg:text-base text-gray-600">
               Have a question or need help? Our team is here for you!
             </p>
           </div>
 
           {/* Contact Form */}
-          <form ref={formRef} action={formAction} className="space-y-6 mb-8">
+          <form ref={formRef} action={formAction} className="space-y-4 lg:space-y-6 mb-6 lg:mb-8">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="name" className="block text-xs lg:text-sm font-medium text-gray-700 mb-1">
                 Name
               </label>
               <Input
@@ -78,10 +57,11 @@ export default function ContactPage() {
                 autoComplete="name"
                 required
                 placeholder="Your Name"
+                className="text-sm lg:text-base"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="email" className="block text-xs lg:text-sm font-medium text-gray-700 mb-1">
                 Email
               </label>
               <Input
@@ -91,32 +71,34 @@ export default function ContactPage() {
                 autoComplete="email"
                 required
                 placeholder="you@email.com"
+                className="text-sm lg:text-base"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+              <label htmlFor="message" className="block text-xs lg:text-sm font-medium text-gray-700 mb-1">
                 Message
               </label>
               <Textarea
                 id="message"
                 name="message"
-                rows={5}
+                rows={4}
                 required
                 placeholder="How can we help you?"
+                className="text-sm lg:text-base"
               />
             </div>
 
             {/* Display Success or Error Messages */}
-            {state.success && <p className="text-sm text-green-600">{state.success}</p>}
-            {state.error && <p className="text-sm text-red-600">{state.error}</p>}
+            {state.success && <p className="text-xs lg:text-sm text-green-600">{state.success}</p>}
+            {state.error && <p className="text-xs lg:text-sm text-red-600">{state.error}</p>}
 
-            <Button type="submit" className="w-full bg-[#345045] hover:bg-[#2D6063] text-white">
+            <Button type="submit" className="w-full bg-[#345045] hover:bg-[#2D6063] text-white text-sm lg:text-base py-2 lg:py-3">
               Send Message
             </Button>
           </form>
 
           {/* Direct Email Link */}
-          <div className="text-center text-gray-600 mb-8">
+          <div className="text-center text-xs lg:text-sm text-gray-600 mb-6 lg:mb-8">
             You can also reach us at:{" "}
             <a
               href="mailto:getpawpal.app@gmail.com"
@@ -127,9 +109,9 @@ export default function ContactPage() {
           </div>
 
           {/* Emergency Notice */}
-          <div className="mt-8 p-4 bg-red-50 border border-red-200 rounded text-center">
-            <span className="font-semibold text-red-700">Emergency Pet Care:</span>{" "}
-            If your pet is experiencing a medical emergency, please contact your veterinarian or local animal hospital immediately. PawPal support is not equipped to handle urgent medical situations.
+          <div className="mt-6 lg:mt-8 p-3 lg:p-4 bg-red-50 border border-red-200 rounded text-center">
+            <span className="font-semibold text-red-700 text-xs lg:text-sm">Emergency Pet Care:</span>{" "}
+            <span className="text-xs lg:text-sm text-red-700">If your pet is experiencing a medical emergency, please contact your veterinarian or local animal hospital immediately. PawPal support is not equipped to handle urgent medical situations.</span>
           </div>
         </div>
       </main>

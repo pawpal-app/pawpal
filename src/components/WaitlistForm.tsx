@@ -144,10 +144,10 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Your Name *</Label>
+            <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                <div className="space-y-1 lg:space-y-2">
+                  <Label htmlFor="name" className="text-sm">Your Name *</Label>
                   <Input
                     id="name"
                     type="text"
@@ -155,10 +155,11 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                     value={formData.name}
                     onChange={(e) => handleInputChange("name", e.target.value)}
                     required
+                    className="text-sm lg:text-base"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email Address *</Label>
+                <div className="space-y-1 lg:space-y-2">
+                  <Label htmlFor="email" className="text-sm">Email Address *</Label>
                   <Input
                     id="email"
                     type="email"
@@ -166,13 +167,14 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                     value={formData.email}
                     onChange={(e) => handleInputChange("email", e.target.value)}
                     required
+                    className="text-sm lg:text-base"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="petName">Pet's Name *</Label>
+              <div className="grid grid-cols-2 gap-3 lg:gap-4">
+                <div className="space-y-1 lg:space-y-2">
+                  <Label htmlFor="petName" className="text-sm">Pet's Name *</Label>
                   <Input
                     id="petName"
                     type="text"
@@ -180,12 +182,13 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                     value={formData.petName}
                     onChange={(e) => handleInputChange("petName", e.target.value)}
                     required
+                    className="text-sm lg:text-base"
                   />
                 </div>
-                <div className="space-y-2">
-                  <Label htmlFor="petType">Pet Type *</Label>
+                <div className="space-y-1 lg:space-y-2">
+                  <Label htmlFor="petType" className="text-sm">Pet Type *</Label>
                   <Select value={formData.petType} onValueChange={(value) => handleInputChange("petType", value)}>
-                    <SelectTrigger>
+                    <SelectTrigger className="text-sm lg:text-base">
                       <SelectValue placeholder="Select pet type" />
                     </SelectTrigger>
                     <SelectContent>
@@ -202,10 +205,10 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="petAge">Pet's Age (optional)</Label>
+              <div className="space-y-1 lg:space-y-2">
+                <Label htmlFor="petAge" className="text-sm">Pet's Age (optional)</Label>
                 <Select value={formData.petAge} onValueChange={(value) => handleInputChange("petAge", value)}>
-                  <SelectTrigger>
+                  <SelectTrigger className="text-sm lg:text-base">
                     <SelectValue placeholder="Select age range" />
                   </SelectTrigger>
                   <SelectContent>
@@ -218,23 +221,24 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                 </Select>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="interests">What interests you most about PAWPAL? (optional)</Label>
+              <div className="space-y-1 lg:space-y-2">
+                <Label htmlFor="interests" className="text-sm">What interests you most about PAWPAL? (optional)</Label>
                 <Textarea
                   id="interests"
                   placeholder="e.g., AI-powered care plans, reminders, finding pet services..."
                   value={formData.interests}
                   onChange={(e) => handleInputChange("interests", e.target.value)}
-                  rows={3}
+                  rows={2}
+                  className="text-sm lg:text-base"
                 />
               </div>
 
-              <div className="bg-[#f0f9ff] p-4 rounded-lg border border-[#66a4a8]/20">
-                <div className="flex items-start space-x-3">
-                  <div className="text-2xl">🎁</div>
+              <div className="bg-[#f0f9ff] p-3 lg:p-4 rounded-lg border border-[#66a4a8]/20">
+                <div className="flex items-start space-x-2 lg:space-x-3">
+                  <div className="text-lg lg:text-xl">🎁</div>
                   <div>
-                    <h4 className="font-semibold text-[#345045] mb-1">Early Access Benefits</h4>
-                    <ul className="text-sm text-gray-600 space-y-1">
+                    <h4 className="text-sm lg:text-base font-semibold text-[#345045] mb-1">Early Access Benefits</h4>
+                    <ul className="text-xs lg:text-sm text-gray-600 space-y-0.5 lg:space-y-1">
                       <li>• Be first to try PAWPAL's AI features</li>
                       <li>• Free premium features for 3 months</li>
                       <li>• Exclusive access to beta features</li>
@@ -246,7 +250,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
 
               <Button
                 type="submit"
-                className="w-full bg-[#1b393b] hover:bg-[#2D6063]/90 text-white py-6 text-lg font-semibold"
+                className="w-full bg-[#1b393b] hover:bg-[#2D6063]/90 text-white py-3 lg:py-4 text-sm lg:text-base font-semibold"
                 disabled={!isFormValid || isSubmitting}
               >
                 {isSubmitting ? (
