@@ -15,6 +15,14 @@ import Link from "next/link";
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<any>(null);
+
+  const scrollTo = (index: number) => {
+    if (carouselApi) {
+      carouselApi.scrollTo(index);
+    }
+    setActiveIndex(index);
+  };
 
   return (
     <div className="min-h-screen scroll-smooth">
@@ -101,7 +109,8 @@ export default function Home() {
               ].map((feature, index) => (
                 <div
                   key={index}
-                  className={`p-6 rounded-lg transition-all duration-300 ${
+                  onClick={() => scrollTo(index)}
+                  className={`p-6 rounded-lg transition-all duration-300 cursor-pointer ${
                     activeIndex === index
                       ? "bg-gradient-to-r from-[#66a4a8]/10 to-[#345045]/10 border border-[#66a4a8]/20 shadow-lg"
                       : "opacity-60 hover:opacity-80"
@@ -111,7 +120,7 @@ export default function Home() {
                     <div className="text-3xl">{feature.icon}</div>
                     <div>
                       <h3 className={`text-xl font-bold mb-2 transition-colors ${
-                        activeIndex === index ? "text-[#345045]" : "text-gray-600"
+                        activeIndex === index ? "text-[#345045]" : "text-gray-700"
                       }`}>
                         {feature.title}
                       </h3>
@@ -131,6 +140,7 @@ export default function Home() {
               <Carousel
                 className="w-full max-w-md mx-auto"
                 setApi={(api) => {
+                  setCarouselApi(api);
                   if (api) {
                     api.on("select", () => {
                       setActiveIndex(api.selectedScrollSnap());
@@ -193,7 +203,7 @@ export default function Home() {
                 {[0, 1, 2, 3].map((index) => (
                   <button
                     key={index}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => scrollTo(index)}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${
                       activeIndex === index
                         ? "bg-[#345045] scale-125"
@@ -207,117 +217,142 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Before vs. After Comparison Section */}
-      <section id="how-it-works" className="py-20 bg-[#f8fcfc]">
+      {/* Section Divider */}
+      <div className="bg-white pt-16">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="border-t-2 border-gray-300 opacity-40"></div>
+        </div>
+      </div>
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
-              From Pet Stress to Pet Bliss
+              How It Works
             </h2>
             <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              See the dramatic difference PawPal makes in your pet parenting journey
+              Your Pet's Best Life is a Few Taps Away. Follow these steps to unlock a smarter way to care for your best friend.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="icon-placeholder text-white text-2xl font-bold">1</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Download & Get Started</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Find Pawpal on the iOS App Store. Create your account in a few simple steps to begin your journey towards more organized and joyful pet parenthood.
+              </p>
+            </div>
+            
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="icon-placeholder text-white text-2xl font-bold">2</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Build Your Pet's Profile</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Add each of your pets to the app. Our system is designed for every kind of companion—tell us their name, breed, age, and lifestyle so we can get to know them.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="icon-placeholder text-white text-2xl font-bold">3</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Unlock Your AI To-Do List</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Once your pet's profile is complete, our AI instantly generates a personalized to-do list. This dynamic schedule adapts to your pet's needs, suggesting everything from feeding times to vet check-ups.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="icon-placeholder text-white text-2xl font-bold">4</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Chat with Your AI Assistant</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Have a question? Just ask. Your AI assistant is available 24/7 to help with anything from "What's the best food for a senior cat?" to "Fun training ideas for a puppy."
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="icon-placeholder text-white text-2xl font-bold">5</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Log Your Daily Diary</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Capture precious moments and track important health notes in the daily diary. It's the perfect place to log meals, monitor behavior, or just save a cute photo from your afternoon walk.
+              </p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="icon-placeholder text-white text-2xl font-bold">6</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Connect with Friends</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Add friends and family to your circle! Share updates, coordinate care for a shared pet, or simply enjoy seeing the adorable moments your friends are sharing in their own diaries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Pawpal Section */}
+      <section id="why-pawpal" className="py-20 bg-[#f8fcfc]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+              Why Pawpal?
+            </h2>
+            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+              More Than Just an App, It's Peace of Mind.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Before PawPal */}
-            <div className="bg-[#ffffff] rounded-lg p-8 shadow-lg border-l-4 border-red-400">
-              <h3 className="text-2xl font-bold text-red-600 mb-6 flex items-center">
-                <span className="mr-3">❌</span>
-                The Old Way: Scattered & Stressful
-              </h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-3">
-                  <div className="text-red-500 text-xl mt-1">❌</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Scattered notes and missed appointments</h4>
-                    <p className="text-gray-600 text-sm">Sticky notes, calendar alerts, and constant worry about what you might have forgotten.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <div className="text-red-500 text-xl mt-1">❌</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Endless, unreliable Google searches</h4>
-                    <p className="text-gray-600 text-sm">Hours spent searching for advice, never sure if the information is accurate or trustworthy.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <div className="text-red-500 text-xl mt-1">❌</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Juggling multiple apps</h4>
-                    <p className="text-gray-600 text-sm">Using separate apps for health symptoms, feeding schedules, walk tracking, and medications.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <div className="text-red-500 text-xl mt-1">❌</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Generic, one-size-fits-all guidance</h4>
-                    <p className="text-gray-600 text-sm">Following advice that doesn't consider your pet's specific breed, age, or health needs.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <div className="text-red-500 text-xl mt-1">❌</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Constant worry and uncertainty</h4>
-                    <p className="text-gray-600 text-sm">The nagging feeling that you're not doing enough or that you might be missing something important.</p>
-                  </div>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-[#163031] mb-3">All-in-One Management</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Track vet appointments, vaccination records, feeding schedules, and daily notes all in one place. No more scattered reminders or forgotten details.
+              </p>
             </div>
 
-            {/* Right Column - After PawPal */}
-            <div className="bg-white rounded-lg p-8 shadow-lg border-l-4 border-green-400">
-              <h3 className="text-2xl font-bold text-green-600 mb-6 flex items-center">
-                <span className="mr-3">✅</span>
-                The PawPal Way: Smart & Simple
-              </h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start space-x-3">
-                  <div className="text-green-500 text-xl mt-1">✅</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">One organized hub for everything</h4>
-                    <p className="text-gray-600 text-sm">All your pet's information, appointments, and care plans organized in one beautiful, easy-to-use app.</p>
-                  </div>
-                </div>
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Truly Personalized AI Care</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Pawpal creates a custom care plan based on your pet's specific breed, age, and lifestyle. Our smart system learns your habits and adapts, so you only see what's important.
+              </p>
+            </div>
 
-                <div className="flex items-start space-x-3">
-                  <div className="text-green-500 text-xl mt-1">✅</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Instant, trustworthy AI advice</h4>
-                    <p className="text-gray-600 text-sm">Get reliable, personalized answers to any question, instantly from your AI assistant, 'Pal'</p>
-                  </div>
-                </div>
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Never Miss a Thing</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Receive intelligent reminders for vaccinations, grooming appointments, medication doses, and more. We help you stay proactive about your pet's well-being.
+              </p>
+            </div>
 
-                <div className="flex items-start space-x-3">
-                  <div className="text-green-500 text-xl mt-1">✅</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Unified health & wellness tracking</h4>
-                    <p className="text-gray-600 text-sm">Monitor health, food, mood, and activity together to see the complete picture of their well-being.</p>
-                  </div>
-                </div>
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Designed for Every Kind of Pet</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Birds, reptiles, rabbits, and fish deserve great care, too. Pawpal is built for all kinds of companions, not just the furry ones.
+              </p>
+            </div>
 
-                <div className="flex items-start space-x-3">
-                  <div className="text-green-500 text-xl mt-1">✅</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Truly personalized care plans</h4>
-                    <p className="text-gray-600 text-sm">Receive AI-generated daily plans that adapt to your pet's unique needs and your family's lifestyle.</p>
-                  </div>
-                </div>
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-[#163031] mb-3">More Fun, Less Stress</h4>
+              <p className="text-gray-700 leading-relaxed">
+                With engaging tips, fun activity ideas, and a supportive community, we turn pet care from a chore into a joyful bonding experience.
+              </p>
+            </div>
 
-                <div className="flex items-start space-x-3">
-                  <div className="text-green-500 text-xl mt-1">✅</div>
-                  <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Confidence and peace of mind</h4>
-                    <p className="text-gray-600 text-sm">Know you’re doing the best for your pet with smart reminders and comprehensive support.</p>
-                  </div>
-                </div>
-              </div>
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <h4 className="text-xl font-bold text-[#163031] mb-3">Your Partner in Pet Parenthood</h4>
+              <p className="text-gray-700 leading-relaxed">
+                Pawpal gives you the confidence that you're providing the best care possible. No more guessing, no more gaps—just smart support every step of the way.
+              </p>
             </div>
           </div>
         </div>
@@ -418,36 +453,55 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-16 mt-16 border-t border-gray-300">
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-[#163031] mb-2">5K+</div>
-              <div className="text-gray-600">Happy Pet Parents</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-[#163031] mb-2">100K+</div>
-              <div className="text-gray-600">Pets Cared For</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-[#163031] mb-2">4.9★</div>
-              <div className="text-gray-600">App Store Rating</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl lg:text-4xl font-bold text-[#163031] mb-2">98%</div>
-              <div className="text-gray-600">Would Recommend</div>
-            </div>
-          </div>
+      {/* Section Divider */}
+      <div className="bg-[#eff3f3] pt-16">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="border-t-2 border-gray-300 opacity-40"></div>
+        </div>
+      </div>
 
-          {/* Trust Badges */}
-          <div className="mt-12 pt-8 border-t border-gray-300">
-            <p className="text-center text-gray-500 text-sm mb-6">Trusted by veterinarians and pet care professionals</p>
-            <div className="flex justify-center items-center space-x-8 opacity-60">
-              <div className="text-gray-600 font-semibold">🏥 VCA Animal Hospitals</div>
-              <div className="text-gray-600 font-semibold">🐾 ASPCA Partner</div>
-              <div className="text-gray-600 font-semibold">📱 Apple Design Award</div>
-              <div className="text-gray-600 font-semibold">🏆 Google Play Editor's Choice</div>
+      {/* Our Promise Section */}
+      <section id="our-promise" className="py-20 bg-[#eff3f3]">
+        <div className="max-w-7xl mx-auto px-4 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl lg:text-5xl font-bold text-[#163031] mb-8">
+              Our Promise to You and Your Pet
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="icon-placeholder text-white text-2xl">👨‍⚕️</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-4 text-center">Guided by Experts</h4>
+              <p className="text-gray-700 leading-relaxed text-center">
+                Our care frameworks and AI are developed in consultation with veterinary professionals to ensure you receive safe, trusted, and up-to-date advice for your pet's well-being.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="icon-placeholder text-white text-2xl">🧠</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-4 text-center">Intelligently Personalized</h4>
+              <p className="text-gray-700 leading-relaxed text-center">
+                We believe every pet is unique. Pawpal goes beyond generic advice, using smart AI to create a truly personalized care plan that adapts to your pet's specific breed, age, and lifestyle.
+              </p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="w-16 h-16 bg-[#66a4a8] rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="icon-placeholder text-white text-2xl">❤️</div>
+              </div>
+              <h4 className="text-xl font-bold text-[#163031] mb-4 text-center">Designed for Pet People</h4>
+              <p className="text-gray-700 leading-relaxed text-center">
+                We're a team of passionate pet lovers building the tool we've always wanted. Every feature is designed to be intuitive, reduce stress, and give you more quality time with your companion.
+              </p>
             </div>
           </div>
+        </div>
+      </section>
         </div>
       </section>
 
