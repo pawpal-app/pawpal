@@ -13,80 +13,158 @@ export interface WaitlistSignup {
 }
 
 /**
- * The single email template for welcoming a new user to the waitlist.
+ * The modern, multi-section email template for welcoming a new user to the waitlist.
+ * This version uses an enhanced header instead of a hero image.
  */
 export const waitlistWelcomeTemplate = {
-  subject: "🐾 You're on the Waitlist - Welcome to PAWPAL!",
+  subject: "You're In! Welcome to the PawPal Pack 🐾",
   html: `
     <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to PAWPAL</title>
-      </head>
-      <body style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <div style="background: linear-gradient(135deg, #819fa1 0%, #163031 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-          <h1 style="color: white; margin: 0; font-size: 28px;"> Welcome to PAWPAL! 🐾 </h1>
-          <p style="color: #f0f9ff; margin: 10px 0 0 0; font-size: 16px;">Your Pet's Personal AI Assistant</p>
-        </div>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Welcome to PAWPAL</title>
+      <style>
+        body { margin: 0; padding: 0; }
+        img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        table { border-collapse: collapse !important; }
+        body, table, td, p, a { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+      </style>
+    </head>
+    <body style="margin: 0; padding: 0; background-color: #f4f4f4;">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #f4f4f4;">
+        <tr>
+          <td align="center">
 
-        <div style="background: white; padding: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 0 0 10px 10px;">
-          <h2 style="color: #345045; margin-top: 0;">Hi {{name}}! 👋</h2>
-          <p>
-            Thank you for joining the <strong>PAWPAL waitlist</strong>! We're so excited to welcome you and {{petName}} to our growing community of <strong>forward-thinking pet parents</strong>. You've officially secured your spot to be <strong>among the first in the world</strong> to experience a new era of pet care.
-          </p>
-          <p> 
-            PawPal is your <strong>AI-powered pet care companion</strong> — here to make caring for your animal easier, smarter, and more fun. From personalized care tips and breed recognition to local groomer recommendations and pet health alerts, we're building an app that's <em>all about you and your pet</em>.
-          </p>
-          <p>
-            You're now one step closer to <strong>exclusive early access</strong> when we launch. We'll keep you updated with sneak peeks, feature reveals, and tips to get the most out of PawPal when it's ready.
-          </p>
-          <p>
-            In the meantime, give {{petName}} a little extra love from all of us — we can't wait to meet them inside PawPal!
-          </p>
-          <p style="margin-top: 30px; color: #2D6063;">
-            - The PawPal Team 🐾
-          </p>
-          <div style="background: #f0f9ff; border-left: 4px solid #66a4a8; padding: 20px; margin: 20px 0; border-radius: 5px;">
-            <h3 style="color: #2D6063; margin-top: 0;">🎁 Your Early Access Benefits:</h3>
-            <ul style="margin: 0; padding-left: 20px;">
-              <li>First access to PAWPAL's AI features</li>
-              <li>Free premium features for 3 months</li>
-              <li>Exclusive beta feature access</li>
-              <li>Direct line to our development team</li>
-            </ul>
-          </div>
-          <div style="text-align: center; margin: 30px 0;">
-            <a href="https://getpawpalapp.com" style="background: #2D6063; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">Visit PAWPAL Website</a>
-          </div>
-          <p style="font-size: 14px; color: #666; margin-top: 30px; text-align: center;">
-            Follow us: 
-            <a href="https://x.com/getpawpal" style="color: #66a4a8;">Twitter</a> | 
-            <a href="https://www.instagram.com/get.pawpal/" style="color: #66a4a8;">Instagram</a> | 
-            <a href="https://www.tiktok.com/@getpawpal" style="color: #66a4a8;">TikTok</a>
-          </p>
-        </div>
-      </body>
+            <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: linear-gradient(135deg, #819fa1 0%, #163031 100%);">
+              <tr>
+                <td align="center" style="padding: 60px 20px;">
+                  <img src="https://getpawpalapp.com/pawpal-logo.png" alt="PawPal Logo" width="150" style="display: block; margin: 0 auto 20px auto;">
+                  
+                  <h1 style="color: white; margin: 0; font-size: 32px; font-weight: bold;">You're Officially on the List!</h1>
+                  <p style="color: #f0f9ff; margin: 10px 0 0 0; font-size: 18px;">Welcome to the future of pet care, {{name}}.</p>
+                </td>
+              </tr>
+            </table>
+            
+            <table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #ffffff; max-width: 600px;">
+              <tr>
+                <td style="padding: 40px 30px 30px 30px; color: #333; line-height: 1.6;">
+                  <h2 style="color: #345045; margin-top: 0; margin-bottom: 20px; font-size: 24px;">Hi {{name}}! 👋</h2>
+                  <p style="margin: 0 0 15px 0;">
+                    We're so excited to welcome you and {{petName}} to the PawPal community! You've officially secured your spot to be <strong>among the first in the world</strong> to experience a new era of pet care.
+                  </p>
+                  <p style="margin: 0 0 15px 0;">
+                    PawPal is your <strong>AI-powered pet care companion</strong> — here to make caring for your animal easier, smarter, and more fun. From personalized care tips to local groomer recommendations, we're building an app that's <em>all about you and your pet</em>.
+                  </p>
+                  <p style="margin: 0;">
+                    In the meantime, give {{petName}} some extra love from us!
+                  </p>
+                </td>
+              </tr>
+            </table>
+
+            <table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #f0f9ff; max-width: 600px;">
+              <tr>
+                <td style="padding: 30px 30px;">
+                  <h3 style="color: #2D6063; margin-top: 0; margin-bottom: 20px; font-size: 20px;">🎁 Your Early Access Benefits:</h3>
+                  
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 15px;">
+                    <tr>
+                      <td width="40" valign="top" style="padding-top: 5px;">⚡️</td>
+                      <td style="color: #333;"><strong>First Access:</strong> Be the first to use PAWPAL's AI features.</td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 15px;">
+                    <tr>
+                      <td width="40" valign="top" style="padding-top: 5px;">⭐</td>
+                      <td style="color: #333;"><strong>Free Premium:</strong> Enjoy all premium features free for 3 months.</td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 15px;">
+                    <tr>
+                      <td width="40" valign="top" style="padding-top: 5px;">🔬</td>
+                      <td style="color: #333;"><strong>Exclusive Betas:</strong> Help us shape the future of PawPal.</td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                    <tr>
+                      <td width="40" valign="top" style="padding-top: 5px;">💬</td>
+                      <td style="color: #333;"><strong>Direct Dev Line:</strong> Share your feedback directly with our team.</td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+            </table>
+            
+            <table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #ffffff; max-width: 600px;">
+              <tr>
+                <td align="center" style="padding: 30px;">
+                  <h3 style="color: #345045; margin-top: 0; font-size: 20px;">What Happens Now?</h3>
+                  <p style="color: #333; margin-top: 0; margin-bottom: 30px;">
+                    Keep an eye on your inbox! We'll be sending sneak peeks, feature reveals, and of course, your official invitation to join PawPal as soon as we launch.
+                  </p>
+                  
+                  <table border="0" cellspacing="0" cellpadding="0" role="presentation">
+                    <tr>
+                      <td align="center" style="border-radius: 8px;" bgcolor="#2D6063">
+                        <a href="https://getpawpalapp.com" target="_blank" class="button-outlook" style="background: #2D6063; border: 1px solid #2D6063; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 16px; font-weight: bold; line-height: 100%; padding: 15px 30px; text-decoration: none;">
+                          Explore What's Coming
+                        </a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+
+            <table width="600" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background-color: #2D6063; max-width: 600px;">
+               <tr>
+                <td align="center" style="padding: 30px;">
+                  <p style="color: #f0f9ff; margin: 0 0 15px 0;">Follow us for cute pet pics & updates!</p>
+                  <p style="margin: 0;">
+                    <a href="https://x.com/getpawpal" style="color: #ffffff; text-decoration: underline;">Twitter</a> &nbsp;|&nbsp; 
+                    <a href="https://www.instagram.com/get.pawpal/" style="color: #ffffff; text-decoration: underline;">Instagram</a> &nbsp;|&nbsp; 
+                    <a href="https://www.tiktok.com/@getpawpal" style="color: #ffffff; text-decoration: underline;">TikTok</a>
+                  </p>
+                  <p style="color: #a7c1c2; font-size: 12px; margin: 20px 0 0 0;">
+                    PawPal LLC. | Raleigh, NC | <a href="#" style="color: #a7c1c2;">Unsubscribe</a>
+                  </p>
+                </td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </body>
     </html>
   `,
-  text: `Hi {{name}}!
+  text: `Hi {{name}}! You're in! Welcome to the PawPal Pack 🐾
 
-Thank you for joining the PAWPAL waitlist! We're thrilled to have you and {{petName}} as part of our growing community.
+We're so excited to have you and {{petName}} join our community of forward-thinking pet parents. You've officially secured your spot to be among the first in the world to experience a new era of pet care.
 
-Your Early Access Benefits:
-• First access to PAWPAL's AI features
-• Free premium features for 3 months
-• Exclusive beta feature access
-• Direct line to our development team
+Here are your exclusive early access benefits:
+⚡️ First Access: Be the first to use PAWPAL's AI features.
+⭐ Free Premium: Enjoy all premium features free for 3 months.
+🔬 Exclusive Betas: Help us shape the future of PawPal.
+💬 Direct Dev Line: Share your feedback directly with our team.
 
-What happens next?
-You'll receive app updates, feature previews, and your exclusive early access invitation when we launch.
+What happens now?
+Keep an eye on your inbox! We'll send sneak peeks, feature reveals, and your official invitation as soon as we launch.
 
-Questions? Just reply to this email!
+Explore what's coming: https://getpawpalapp.com
 
-Best regards,
-The PAWPAL Team`
+Follow us for updates!
+Twitter: https://x.com/getpawpal
+Instagram: https://www.instagram.com/get.pawpal/
+TikTok: https://www.tiktok.com/@getpawpal
+
+PawPal LLC. | Raleigh, NC
+`
 };
 
 /**

@@ -1,0 +1,21 @@
+{
+  "name": "PawPal - Your Pet's Personal AI Assistant",
+  "short_name": "PawPal",
+  "description": "Your Pet's Personal AI Assistant",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2D6063",
+  "icons": [
+    {
+      "src": "/pawpal-circle-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pawpal-circle-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
