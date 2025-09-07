@@ -41,7 +41,7 @@ export const waitlistWelcomeTemplate = {
             <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="background: linear-gradient(135deg, #819fa1 0%, #163031 100%);">
               <tr>
                 <td align="center" style="padding: 60px 20px;">
-                  <img src="https://getpawpalapp.com/pawpal-logo.png" alt="PawPal Logo" width="150" style="display: block; margin: 0 auto 20px auto;">
+                  <img src="https://getpawpalapp.com/pawpal-word-logo.png" alt="PawPal Logo" width="150" style="display: block; margin: 0 auto 20px auto;">
                   
                   <h1 style="color: white; margin: 0; font-size: 32px; font-weight: bold;">You're Officially on the List!</h1>
                   <p style="color: #f0f9ff; margin: 10px 0 0 0; font-size: 18px;">Welcome to the future of pet care, {{name}}.</p>
@@ -60,8 +60,13 @@ export const waitlistWelcomeTemplate = {
                     PawPal is your <strong>AI-powered pet care companion</strong> — here to make caring for your animal easier, smarter, and more fun. From personalized care tips to local groomer recommendations, we're building an app that's <em>all about you and your pet</em>.
                   </p>
                   <p style="margin: 0;">
-                    In the meantime, give {{petName}} some extra love from us!
+                    In the meantime, give {{petName}} a little extra love from all of us — we can't wait to meet them inside PawPal!
                   </p>
+                  
+                  <p style="margin-top: 30px; color: #2D6063;">
+                    - The PawPal Team 🐾
+                  </p>
+
                 </td>
               </tr>
             </table>
@@ -131,7 +136,7 @@ export const waitlistWelcomeTemplate = {
                     <a href="https://www.tiktok.com/@getpawpal" style="color: #ffffff; text-decoration: underline;">TikTok</a>
                   </p>
                   <p style="color: #a7c1c2; font-size: 12px; margin: 20px 0 0 0;">
-                    PawPal LLC. | Raleigh, NC | <a href="#" style="color: #a7c1c2;">Unsubscribe</a>
+                    PawPal LLC | <a href="#" style="color: #a7c1c2;">Unsubscribe</a>
                   </p>
                 </td>
               </tr>
@@ -146,6 +151,11 @@ export const waitlistWelcomeTemplate = {
   text: `Hi {{name}}! You're in! Welcome to the PawPal Pack 🐾
 
 We're so excited to have you and {{petName}} join our community of forward-thinking pet parents. You've officially secured your spot to be among the first in the world to experience a new era of pet care.
+
+In the meantime, give {{petName}} a little extra love from all of us — we can't wait to meet them inside PawPal!
+
+- The PawPal Team 🐾
+
 
 Here are your exclusive early access benefits:
 ⚡️ First Access: Be the first to use PAWPAL's AI features.
@@ -163,7 +173,7 @@ Twitter: https://x.com/getpawpal
 Instagram: https://www.instagram.com/get.pawpal/
 TikTok: https://www.tiktok.com/@getpawpal
 
-PawPal LLC. | Raleigh, NC
+PawPal LLC
 `
 };
 
@@ -199,7 +209,8 @@ export async function sendWaitlistWelcomeEmail(userData: WaitlistSignup) {
       console.error(`❌ Failed to send welcome email to ${userData.email}:`, result.error);
       return { success: false, error: result.error };
     }
-  } catch (error) {
+  } catch (error)
+ {
     console.error('❌ An unexpected error occurred in sendWaitlistWelcomeEmail:', error);
     return {
       success: false,
