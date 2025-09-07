@@ -17,7 +17,7 @@ export interface WaitlistSignup {
  * This version uses an enhanced header instead of a hero image.
  */
 export const waitlistWelcomeTemplate = {
-  subject: "You're In! Welcome to the PawPal Pack 🐾",
+  subject: "🐾You're on the Waitlist - Welcome to PAWPAL!",
   html: `
     <!DOCTYPE html>
     <html lang="en">
