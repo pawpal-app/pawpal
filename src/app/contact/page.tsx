@@ -92,7 +92,7 @@ export default function ContactPage() {
             {state.success && <p className="text-xs lg:text-sm text-green-600">{state.success}</p>}
             {state.error && <p className="text-xs lg:text-sm text-red-600">{state.error}</p>}
 
-            <Button type="submit" className="w-full bg-[#345045] hover:bg-[#2D6063] text-white text-sm lg:text-base py-2 lg:py-3">
+            <Button type="submit" className="w-full bg-[#6da4a8] hover:bg-[#2D6063] text-white text-sm lg:text-base py-2 lg:py-3">
               Send Message
             </Button>
           </form>
@@ -101,10 +101,10 @@ export default function ContactPage() {
           <div className="text-center text-xs lg:text-sm text-gray-600 mb-6 lg:mb-8">
             You can also reach us at:{" "}
             <a
-              href="mailto:getpawpal.app@gmail.com"
+              href="mailto:support@getpawpalapp.com"
               className="text-[#345045] underline hover:text-[#2D6063] transition-colors"
             >
-              getpawpal.app@gmail.com
+              support@getpawpalapp.com
             </a>
           </div>
 

@@ -24,7 +24,7 @@ export function Header() {
             alt="PAWPAL Logo"
             className="h-8 w-8 object-cover"
           />
-          <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">PAWPAL</span>
+          <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">PawPal</span>
         </Link>
 
         {/* Desktop Navigation Menu */}
@@ -32,7 +32,6 @@ export function Header() {
             <Link href="/" className="text-gray-700 hover:text-[#345045] transition-colors">Home</Link>
             <Link href="/#features" className="text-gray-700 hover:text-[#345045] transition-colors">Features</Link>
             <Link href="/#how-it-works" className="text-gray-700 hover:text-[#345045] transition-colors">How it Works</Link>
-            <Link href="/#why-pawpal" className="text-gray-700 hover:text-[#345045] transition-colors">Why PawPal?</Link>
             <Link href="/#testimonials" className="text-gray-700 hover:text-[#345045] transition-colors">Testimonials</Link>
             <Link href="/#waitlist" className="text-gray-700 hover:text-[#345045] transition-colors">Waitlist</Link>
             <Link href="/blog" className="text-gray-700 hover:text-[#345045] transition-colors">Blog</Link>
@@ -73,13 +72,6 @@ export function Header() {
             onClick={closeMenu}
           >
             How it Works
-          </Link>
-          <Link 
-            href="/#why-pawpal" 
-            className="block text-gray-700 hover:text-[#345045] transition-colors py-2"
-            onClick={closeMenu}
-          >
-            Why Pawpal?
           </Link>
           <Link 
             href="/#testimonials" 

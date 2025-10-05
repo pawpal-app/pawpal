@@ -23,7 +23,7 @@ export async function sendEmail(prevState: State, formData: FormData): Promise<S
   try {
     await resend.emails.send({
       from: 'PawPal Contact Form <onboarding@resend.dev>',
-      to: 'getpawpal.app@gmail.com',
+      to: 'support@getpawpalapp.com',
       subject: `New message from ${name}`,
       replyTo: email,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,

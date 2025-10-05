@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-// This import is no longer needed on the frontend, as the backend handles the email now.
-// import { triggerEmailSequence, type WaitlistSignup } from "@/lib/email-automation"; 
 import {
   Dialog,
   DialogContent,
@@ -40,6 +38,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -49,8 +48,22 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
     interests: "",
   });
 
+  const totalSteps = 3;
+
   const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const nextStep = () => {
+    if (currentStep < totalSteps) {
+      setCurrentStep(currentStep + 1);
+    }
+  };
+
+  const prevStep = () => {
+    if (currentStep > 1) {
+      setCurrentStep(currentStep - 1);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -58,8 +71,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
     setIsSubmitting(true);
 
     try {
-      // Submit to the correct Vercel API endpoint
-      const response = await fetch("/api/waitlist", { // <--- THIS IS THE FIX
+      const response = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -79,10 +91,10 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
         setIsSubmitted(true);
         console.log('✅ Waitlist signup successful:', result);
 
-        // Reset form after 15 seconds
         setTimeout(() => {
           setIsSubmitted(false);
           setIsOpen(false);
+          setCurrentStep(1);
           setFormData({
             name: "",
             email: "",
@@ -103,6 +115,20 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
     }
   };
 
+  const isStepValid = (step: number) => {
+    switch (step) {
+      case 1:
+        return formData.name && formData.email;
+      case 2:
+        return formData.petName && formData.petType;
+      case 3:
+        return true; // Optional fields
+      default:
+        return false;
+    }
+  };
+
+  const canProceed = isStepValid(currentStep);
   const isFormValid = formData.name && formData.email && formData.petName && formData.petType;
 
   return (
@@ -111,163 +137,311 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
         <DialogTrigger asChild>
           {children}
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
-
-          {isSubmitted ? (
-            <div className="text-center py-8">
-              <div className="text-6xl mb-4">🎉</div>
-              <h3 className="text-xl font-bold text-[#2D6063] mb-2">
-                Welcome to the PAWPAL Family!
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Thank you for signing up! We'll keep you updated on our launch and send you exclusive early access when we're ready.
+        <DialogContent className="sm:max-w-[600px] max-h-[95vh] overflow-y-auto p-0 bg-gradient-to-br from-white via-[#f8fcfc] to-white">
+          {/* Header with gradient background */}
+          <div className="bg-gradient-to-r from-[#66a4a8] via-[#91a6a6] to-[#66a4a8] p-6 text-white rounded-t-lg">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold flex items-center justify-center gap-2">
+                <span className="text-3xl">🐾</span>
+                Join the PawPal Family
+              </DialogTitle>
+              <p className="text-[#eff3f3] mt-2 text-sm text-center">
+                Get early access to AI-powered pet care
               </p>
-
-              <div className="space-y-3">
-                <div className="p-4 bg-green-50 rounded-lg border border-green-200">
-                  <p className="text-sm text-green-700 font-medium">
-                    🎯 You're now on the list for early access to PAWPAL's AI-powered pet care features!
-                  </p>
-                </div>
-
-                <div className="p-4 bg-blue-50 rounded-lg border border-blue-200">
-                  <h4 className="text-sm font-semibold text-blue-800 mb-2">📧 Check your email!</h4>
-                  <p className="text-xs text-blue-700">
-                    We've sent you a welcome email with your early access benefits. Over the next few days, you'll receive:
-                  </p>
-                  <ul className="text-xs text-blue-700 mt-2 space-y-1">
-                    <li>• Personalized pet care tips for {formData.petName}</li>
-                    <li>• App development updates</li>
-                    <li>• Exclusive early access invitation</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
-              <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                <div className="space-y-1 lg:space-y-2">
-                  <Label htmlFor="name" className="text-sm">Your Name *</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Enter your name"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange("name", e.target.value)}
-                    required
-                    className="text-sm lg:text-base"
-                  />
-                </div>
-                <div className="space-y-1 lg:space-y-2">
-                  <Label htmlFor="email" className="text-sm">Email Address *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange("email", e.target.value)}
-                    required
-                    className="text-sm lg:text-base"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 lg:gap-4">
-                <div className="space-y-1 lg:space-y-2">
-                  <Label htmlFor="petName" className="text-sm">Pet's Name *</Label>
-                  <Input
-                    id="petName"
-                    type="text"
-                    placeholder="e.g., Luna, Max, Charlie"
-                    value={formData.petName}
-                    onChange={(e) => handleInputChange("petName", e.target.value)}
-                    required
-                    className="text-sm lg:text-base"
-                  />
-                </div>
-                <div className="space-y-1 lg:space-y-2">
-                  <Label htmlFor="petType" className="text-sm">Pet Type *</Label>
-                  <Select value={formData.petType} onValueChange={(value) => handleInputChange("petType", value)}>
-                    <SelectTrigger className="text-sm lg:text-base">
-                      <SelectValue placeholder="Select pet type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="dog">🐕 Dog</SelectItem>
-                      <SelectItem value="cat">🐱 Cat</SelectItem>
-                      <SelectItem value="bird">🐦 Bird</SelectItem>
-                      <SelectItem value="rabbit">🐰 Rabbit</SelectItem>
-                      <SelectItem value="reptile">🦎 Reptile</SelectItem>
-                      <SelectItem value="fish">🐠 Fish</SelectItem>
-                      <SelectItem value="hamster">🐹 Hamster/Small Animal</SelectItem>
-                      <SelectItem value="other">🐾 Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-
-              <div className="space-y-1 lg:space-y-2">
-                <Label htmlFor="petAge" className="text-sm">Pet's Age (optional)</Label>
-                <Select value={formData.petAge} onValueChange={(value) => handleInputChange("petAge", value)}>
-                  <SelectTrigger className="text-sm lg:text-base">
-                    <SelectValue placeholder="Select age range" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="puppy">Puppy/Kitten (0-1 year)</SelectItem>
-                    <SelectItem value="young">Young (1-3 years)</SelectItem>
-                    <SelectItem value="adult">Adult (3-7 years)</SelectItem>
-                    <SelectItem value="senior">Senior (7+ years)</SelectItem>
-                    <SelectItem value="unknown">Not sure</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-1 lg:space-y-2">
-                <Label htmlFor="interests" className="text-sm">What interests you most about PAWPAL? (optional)</Label>
-                <Textarea
-                  id="interests"
-                  placeholder="e.g., AI-powered care plans, reminders, finding pet services..."
-                  value={formData.interests}
-                  onChange={(e) => handleInputChange("interests", e.target.value)}
-                  rows={2}
-                  className="text-sm lg:text-base"
+            </DialogHeader>
+            
+            {/* Progress indicator */}
+            <div className="flex items-center justify-center mt-6 space-x-2">
+              {Array.from({ length: totalSteps }, (_, i) => (
+                <div
+                  key={i}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    i + 1 <= currentStep
+                      ? "bg-white w-8"
+                      : "bg-white/30 w-2"
+                  }`}
                 />
-              </div>
+              ))}
+            </div>
+          </div>
 
-              <div className="bg-[#f0f9ff] p-3 lg:p-4 rounded-lg border border-[#66a4a8]/20">
-                <div className="flex items-start space-x-2 lg:space-x-3">
-                  <div className="text-lg lg:text-xl">🎁</div>
-                  <div>
-                    <h4 className="text-sm lg:text-base font-semibold text-[#345045] mb-1">Early Access Benefits</h4>
-                    <ul className="text-xs lg:text-sm text-gray-600 space-y-0.5 lg:space-y-1">
-                      <li>• Be first to try PAWPAL's AI features</li>
-                      <li>• Free premium features for 3 months</li>
-                      <li>• Exclusive access to beta features</li>
-                      <li>• Direct feedback line to our development team</li>
+          <div className="p-6">
+            {isSubmitted ? (
+              <div className="text-center py-8">
+                <div className="relative mb-6">
+                  <div className="w-24 h-24 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                    <span className="text-4xl">🎉</span>
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-lg">✓</span>
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-[#2D6063] mb-3">
+                  Welcome to the PawPal Family!
+                </h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Thank you for signing up! We'll keep you updated on our launch and send you exclusive early access when we're ready.
+                </p>
+
+                <div className="space-y-4">
+                  <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200 shadow-sm">
+                    <p className="text-sm text-green-700 font-medium flex items-center gap-2">
+                      <span className="text-lg">🎯</span>
+                      You're now on the list for early access to PawPal's AI-powered pet care features!
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-gradient-to-r from-blue-50 to-sky-50 rounded-xl border border-blue-200 shadow-sm">
+                    <h4 className="text-sm font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                      <span className="text-lg">📧</span>
+                      Check your email!
+                    </h4>
+                    <p className="text-xs text-blue-700 mb-2">
+                      We've sent you a welcome email with your early access benefits. Over the next few days, you'll receive:
+                    </p>
+                    <ul className="text-xs text-blue-700 space-y-1">
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
+                        Personalized pet care tips for <span className="font-medium">{formData.petName}</span>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
+                        App development updates
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
+                        Exclusive early access invitation
+                      </li>
                     </ul>
                   </div>
                 </div>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Step 1: Personal Information */}
+                {currentStep === 1 && (
+                  <div className="space-y-6 animate-in slide-in-from-right-4 duration-300">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#66a4a8] to-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span className="text-2xl">👤</span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#2D6063] mb-2">Tell us about yourself</h3>
+                      <p className="text-gray-600 text-sm">We'll personalize your experience</p>
+                    </div>
 
-              <Button
-                type="submit"
-                className="w-full bg-[#1b393b] hover:bg-[#2D6063]/90 text-white py-3 lg:py-4 text-sm lg:text-base font-semibold"
-                disabled={!isFormValid || isSubmitting}
-              >
-                {isSubmitting ? (
-                  <div className="flex items-center space-x-2">
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    <span>Joining Waitlist...</span>
+                    <div className="max-w-md mx-auto space-y-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="name" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <span>✨</span>Your Name *
+                        </Label>
+                        <Input
+                          id="name"
+                          type="text"
+                          placeholder="Enter your name"
+                          value={formData.name}
+                          onChange={(e) => handleInputChange("name", e.target.value)}
+                          required
+                          className="h-12 border-2 border-gray-200 focus:border-[#66a4a8] focus:ring-2 focus:ring-[#66a4a8]/20 transition-all duration-200 rounded-xl"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="email" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <span>📧</span>Email Address *
+                        </Label>
+                        <Input
+                          id="email"
+                          type="email"
+                          placeholder="your@email.com"
+                          value={formData.email}
+                          onChange={(e) => handleInputChange("email", e.target.value)}
+                          required
+                          className="h-12 border-2 border-gray-200 focus:border-[#66a4a8] focus:ring-2 focus:ring-[#66a4a8]/20 transition-all duration-200 rounded-xl"
+                        />
+                      </div>
+                    </div>
                   </div>
-                ) : (
-                  "🚀 Join the Waitlist"
                 )}
-              </Button>
 
-              <p className="text-xs text-gray-500 text-center">
-                By joining, you agree to receive updates about PAWPAL. We respect your privacy and won't spam you.
-              </p>
-            </form>
-          )}
+                {/* Step 2: Pet Information */}
+                {currentStep === 2 && (
+                  <div className="space-y-6 animate-in slide-in-from-right-4 duration-300">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#66a4a8] to-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span className="text-2xl">🐕</span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#2D6063] mb-2">Meet your furry friend</h3>
+                      <p className="text-gray-600 text-sm">Help us create personalized care plans</p>
+                    </div>
+
+                    <div className="max-w-md mx-auto space-y-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="petName" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <span>🐾</span>Pet's Name *
+                        </Label>
+                        <Input
+                          id="petName"
+                          type="text"
+                          placeholder="e.g., Luna, Max, Charlie"
+                          value={formData.petName}
+                          onChange={(e) => handleInputChange("petName", e.target.value)}
+                          required
+                          className="h-12 border-2 border-gray-200 focus:border-[#66a4a8] focus:ring-2 focus:ring-[#66a4a8]/20 transition-all duration-200 rounded-xl"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="petType" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <span>🏷️</span>Pet Type *
+                        </Label>
+                        <Select value={formData.petType} onValueChange={(value) => handleInputChange("petType", value)}>
+                          <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-[#66a4a8] focus:ring-2 focus:ring-[#66a4a8]/20 transition-all duration-200 rounded-xl">
+                            <SelectValue placeholder="Select pet type" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="dog">🐕 Dog</SelectItem>
+                            <SelectItem value="cat">🐱 Cat</SelectItem>
+                            <SelectItem value="bird">🐦 Bird</SelectItem>
+                            <SelectItem value="rabbit">🐰 Rabbit</SelectItem>
+                            <SelectItem value="reptile">🦎 Reptile</SelectItem>
+                            <SelectItem value="fish">🐠 Fish</SelectItem>
+                            <SelectItem value="hamster">🐹 Hamster/Small Animal</SelectItem>
+                            <SelectItem value="other">🐾 Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                      <div className="space-y-2">
+                        <Label htmlFor="petAge" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <span>🎂</span>Pet's Age (optional)
+                        </Label>
+                        <Select value={formData.petAge} onValueChange={(value) => handleInputChange("petAge", value)}>
+                          <SelectTrigger className="h-12 border-2 border-gray-200 focus:border-[#66a4a8] focus:ring-2 focus:ring-[#66a4a8]/20 transition-all duration-200 rounded-xl">
+                            <SelectValue placeholder="Select age range" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="puppy">Baby (0-1 year)</SelectItem>
+                            <SelectItem value="young">Young (1-3 years)</SelectItem>
+                            <SelectItem value="adult">Adult (3-7 years)</SelectItem>
+                            <SelectItem value="senior">Senior (7+ years)</SelectItem>
+                            <SelectItem value="unknown">Not sure</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Step 3: Interests */}
+                {currentStep === 3 && (
+                  <div className="space-y-6 animate-in slide-in-from-right-4 duration-300">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-br from-[#66a4a8] to-[#2D6063] rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <span className="text-2xl">💭</span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-[#2D6063] mb-2">What interests you most?</h3>
+                      <p className="text-gray-600 text-sm">Help us prioritize features for you</p>
+                    </div>
+
+                    <div className="max-w-md mx-auto space-y-4">
+                      <div className="space-y-2">
+                        <Label htmlFor="interests" className="text-sm font-medium text-gray-700 flex items-center gap-2">
+                          <span>🌟</span>What interests you most about PawPal? (optional)
+                        </Label>
+                        <Textarea
+                          id="interests"
+                          placeholder="e.g., AI-powered care plans, reminders, finding pet services..."
+                          value={formData.interests}
+                          onChange={(e) => handleInputChange("interests", e.target.value)}
+                          rows={3}
+                          className="border-2 border-gray-200 focus:border-[#66a4a8] focus:ring-2 focus:ring-[#66a4a8]/20 transition-all duration-200 rounded-xl resize-none"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Benefits card */}
+                    <div className="bg-gradient-to-r from-[#f0f9ff] to-[#e0f2fe] p-5 rounded-xl border border-[#66a4a8]/20 shadow-sm">
+                      <div className="flex items-start space-x-3">
+                        <div className="text-2xl">🎁</div>
+                        <div>
+                          <h4 className="text-base font-semibold text-[#345045] mb-2">Early Access Benefits</h4>
+                          <ul className="text-sm text-gray-600 space-y-1">
+                            <li className="flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 bg-[#66a4a8] rounded-full"></span>
+                              Free trial access to premium features
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 bg-[#66a4a8] rounded-full"></span>
+                              Exclusive access to beta features
+                            </li>
+                            <li className="flex items-center gap-2">
+                              <span className="w-1.5 h-1.5 bg-[#66a4a8] rounded-full"></span>
+                              Direct feedback line to our development team
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                )}
+
+                {/* Navigation buttons */}
+                <div className="flex justify-between items-center pt-4 border-t border-gray-200">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      prevStep();
+                    }}
+                    disabled={currentStep === 1}
+                    className="px-6 py-2 border-2 border-gray-300 text-gray-600 hover:border-[#66a4a8] hover:text-[#2D6063] transition-all duration-200 rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    ← Back
+                  </Button>
+
+                  <div className="text-xs text-gray-500">
+                    Step {currentStep} of {totalSteps}
+                  </div>
+
+                  {currentStep < 3 ? (
+                    <Button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        nextStep();
+                      }}
+                      disabled={!canProceed}
+                      className="px-6 py-2 bg-gradient-to-r from-[#66a4a8] to-[#2D6063] text-white hover:from-[#5a9195] hover:to-[#1b393b] transition-all duration-200 rounded-xl shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      Next →
+                    </Button>
+                  ) : (
+                    <Button
+                      type="submit"
+                      disabled={!isFormValid || isSubmitting}
+                      className="px-8 py-2 bg-gradient-to-r from-[#66a4a8] to-[#2D6063] text-white hover:from-[#5a9195] hover:to-[#1b393b] transition-all duration-200 rounded-xl shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <div className="flex items-center space-x-2">
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          <span>Joining...</span>
+                        </div>
+                      ) : (
+                        <div className="flex items-center space-x-2">
+                          <span>🚀</span>
+                          <span>Join the Waitlist</span>
+                        </div>
+                      )}
+                    </Button>
+                  )}
+                </div>
+
+                <p className="text-xs text-gray-500 text-center pt-2">
+                  By joining, you agree to receive updates about PawPal. We respect your privacy and won't spam you.
+                </p>
+              </form>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
     </>
