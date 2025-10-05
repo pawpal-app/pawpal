@@ -79,10 +79,24 @@ class EmailService {
 
 // --- Singleton Instance Configuration ---
 
-const apiKey = process.env.EMAIL_API_KEY;
+let emailServiceInstance: EmailService | null = null;
 
-if (!apiKey) {
-  throw new Error('EMAIL_API_KEY environment variable is not set. This is required for sending emails.');
+/**
+ * Gets or creates the singleton EmailService instance.
+ * This lazy initialization prevents errors during build when EMAIL_API_KEY is not available.
+ */
+function getEmailService(): EmailService {
+  if (!emailServiceInstance) {
+    const apiKey = process.env.EMAIL_API_KEY;
+    
+    if (!apiKey) {
+      throw new Error('EMAIL_API_KEY environment variable is not set. This is required for sending emails.');
+    }
+    
+    emailServiceInstance = new EmailService(apiKey, process.env.FROM_EMAIL);
+  }
+  
+  return emailServiceInstance;
 }
 
 /**
@@ -98,4 +112,6 @@ if (!apiKey) {
  * html: '<h1>Your account is ready!</h1>'
  * });
  */
-export const emailService = new EmailService(apiKey, process.env.FROM_EMAIL);
+export const emailService = {
+  sendEmail: (data: EmailData) => getEmailService().sendEmail(data)
+};

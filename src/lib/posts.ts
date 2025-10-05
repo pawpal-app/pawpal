@@ -22,6 +22,7 @@ export function getSortedPostsData() {
         date: string;
         author: string;
         excerpt: string;
+        coverImage: string;
       }),
     };
   });
