@@ -67,6 +67,32 @@ export const waitlistWelcomeTemplate = {
           margin: 12px 0;
           border-left: 4px solid #66a4a8;
         }
+        .benefit-row {
+          display: table;
+          width: 100%;
+          table-layout: fixed;
+        }
+        .benefit-icon {
+          display: table-cell;
+          width: 60px;
+          vertical-align: middle;
+          text-align: center;
+        }
+        .benefit-content {
+          display: table-cell;
+          vertical-align: middle;
+          padding-left: 15px;
+        }
+        .icon-container {
+          width: 50px;
+          height: 50px;
+          background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%);
+          border-radius: 12px;
+          display: inline-block;
+          text-align: center;
+          line-height: 50px;
+          box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);
+        }
         .btn-primary {
           display: inline-block;
           background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%);
@@ -123,12 +149,19 @@ export const waitlistWelcomeTemplate = {
           animation: fadeInUp 0.6s ease-out;
         }
         @media only screen and (max-width: 600px) {
-          .container { width: 100% !important; }
-          .card { margin: 10px !important; border-radius: 12px !important; }
-          .benefit-card { margin: 8px 0 !important; }
+          .container { width: 100% !important; padding: 0 10px !important; }
+          .card { margin: 10px 0 !important; border-radius: 12px !important; }
+          .benefit-card { margin: 8px 0 !important; padding: 15px !important; }
+          .benefit-icon { display: block !important; width: 100% !important; text-align: center !important; margin-bottom: 10px !important; }
+          .benefit-content { display: block !important; padding-left: 0 !important; text-align: center !important; }
+          .icon-container { width: 45px !important; height: 45px !important; line-height: 45px !important; }
+          table[style*="margin-bottom: 25px"] td:first-child { display: block !important; width: 100% !important; text-align: center !important; margin-bottom: 10px !important; }
+          table[style*="margin-bottom: 25px"] td:last-child { display: block !important; width: 100% !important; text-align: center !important; }
           h1 { font-size: 28px !important; }
           h2 { font-size: 24px !important; }
           h3 { font-size: 20px !important; }
+          h4 { font-size: 16px !important; }
+          p { font-size: 16px !important; }
         }
       </style>
     </head>
@@ -167,12 +200,18 @@ export const waitlistWelcomeTemplate = {
               <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" class="card">
                 <tr>
                   <td style="padding: 40px 35px;">
-                    <div style="display: flex; align-items: center; margin-bottom: 25px;">
-                      <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);">
-                        <span style="color: white; font-size: 24px;">👋</span>
-                      </div>
-                      <h2 style="color: #163031; margin: 0; font-size: 28px; font-weight: 700;">Hi {{name}}!</h2>
-                    </div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation" style="margin-bottom: 25px;">
+                      <tr>
+                        <td width="70" align="center" valign="middle">
+                          <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 50%; text-align: center; line-height: 50px; box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);">
+                            <span style="color: white; font-size: 24px;">👋</span>
+                          </div>
+                        </td>
+                        <td valign="middle">
+                          <h2 style="color: #163031; margin: 0; font-size: 28px; font-weight: 700;">Hi {{name}}!</h2>
+                        </td>
+                      </tr>
+                    </table>
                     
                     <p style="margin: 0 0 20px 0; color: #4a5568; font-size: 18px; line-height: 1.7;">
                       We're <strong style="color: #2D6063;">so excited</strong> to welcome you and <strong style="color: #66a4a8;">{{petName}}</strong> to the PawPal community! You've officially secured your spot to be <strong>among the first in the world</strong> to experience a new era of pet care. 🌟
@@ -206,51 +245,67 @@ export const waitlistWelcomeTemplate = {
                     </h3>
                     
                     <div class="benefit-card">
-                      <div style="display: flex; align-items: center;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);">
-                          <span style="color: white; font-size: 20px;">⚡️</span>
-                        </div>
-                        <div>
-                          <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">First Access</h4>
-                          <p style="margin: 0; color: #4a5568; font-size: 16px;">Be the first to use PawPal's AI features</p>
-                        </div>
-                      </div>
+                      <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td width="60" align="center" valign="middle" class="benefit-icon">
+                            <div class="icon-container">
+                              <span style="color: white; font-size: 20px;">⚡️</span>
+                            </div>
+                          </td>
+                          <td valign="middle" class="benefit-content">
+                            <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">First Access</h4>
+                            <p style="margin: 0; color: #4a5568; font-size: 16px;">Be the first to use PawPal's AI features</p>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
                     
                     <div class="benefit-card">
-                      <div style="display: flex; align-items: center;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);">
-                          <span style="color: white; font-size: 20px;">⭐</span>
-                        </div>
-                        <div>
-                          <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">Free Premium</h4>
-                          <p style="margin: 0; color: #4a5568; font-size: 16px;">Enjoy all premium features free for 3 months</p>
-                        </div>
-                      </div>
+                      <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td width="60" align="center" valign="middle" class="benefit-icon">
+                            <div class="icon-container">
+                              <span style="color: white; font-size: 20px;">⭐</span>
+                            </div>
+                          </td>
+                          <td valign="middle" class="benefit-content">
+                            <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">Free Premium</h4>
+                            <p style="margin: 0; color: #4a5568; font-size: 16px;">Enjoy all premium features free for 3 months</p>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
                     
                     <div class="benefit-card">
-                      <div style="display: flex; align-items: center;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);">
-                          <span style="color: white; font-size: 20px;">🔬</span>
-                        </div>
-                        <div>
-                          <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">Exclusive Betas</h4>
-                          <p style="margin: 0; color: #4a5568; font-size: 16px;">Help us shape the future of PawPal</p>
-                        </div>
-                      </div>
+                      <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td width="60" align="center" valign="middle" class="benefit-icon">
+                            <div class="icon-container">
+                              <span style="color: white; font-size: 20px;">🔬</span>
+                            </div>
+                          </td>
+                          <td valign="middle" class="benefit-content">
+                            <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">Exclusive Betas</h4>
+                            <p style="margin: 0; color: #4a5568; font-size: 16px;">Help us shape the future of PawPal</p>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
                     
                     <div class="benefit-card">
-                      <div style="display: flex; align-items: center;">
-                        <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-right: 15px; box-shadow: 0 4px 15px rgba(102, 164, 168, 0.3);">
-                          <span style="color: white; font-size: 20px;">💬</span>
-                        </div>
-                        <div>
-                          <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">Direct Dev Line</h4>
-                          <p style="margin: 0; color: #4a5568; font-size: 16px;">Share your feedback directly with our team</p>
-                        </div>
-                      </div>
+                      <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                        <tr>
+                          <td width="60" align="center" valign="middle" class="benefit-icon">
+                            <div class="icon-container">
+                              <span style="color: white; font-size: 20px;">💬</span>
+                            </div>
+                          </td>
+                          <td valign="middle" class="benefit-content">
+                            <h4 style="margin: 0 0 5px 0; color: #163031; font-size: 18px; font-weight: 600;">Direct Dev Line</h4>
+                            <p style="margin: 0; color: #4a5568; font-size: 16px;">Share your feedback directly with our team</p>
+                          </td>
+                        </tr>
+                      </table>
                     </div>
                   </td>
                 </tr>
