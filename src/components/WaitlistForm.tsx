@@ -215,7 +215,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                     </p>
                     <div className="flex gap-3 justify-center mt-3">
                       <a 
-                        href="https://instagram.com/pawpal" 
+                        href="https://www.instagram.com/get.pawpal/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-xs bg-purple-100 hover:bg-purple-200 text-purple-700 px-3 py-1 rounded-full transition-colors duration-200"
@@ -223,15 +223,15 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                         Instagram
                       </a>
                       <a 
-                        href="https://twitter.com/pawpal" 
+                        href="https://x.com/getpawpal" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-xs bg-purple-100 hover:bg-purple-200 text-purple-700 px-3 py-1 rounded-full transition-colors duration-200"
                       >
-                        Twitter
+                        X
                       </a>
                       <a 
-                        href="https://tiktok.com/@pawpal" 
+                        href="https://www.tiktok.com/@getpawpal" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-xs bg-purple-100 hover:bg-purple-200 text-purple-700 px-3 py-1 rounded-full transition-colors duration-200"

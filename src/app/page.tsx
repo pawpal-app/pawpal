@@ -279,18 +279,15 @@ export default function Home() {
       <section className="py-12 sm:py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            {/* Left Content - Screenshot Placeholder */}
-            {/* TODO: Replace with #7 AI Chat screenshot */}
+            {/* Left Content - AI Chat Screenshot */}
             <div className="relative order-2 lg:order-1">
-              <div className="w-full max-w-sm mx-auto bg-white rounded-3xl shadow-2xl p-4">
-                <div className="bg-gray-100 rounded-2xl h-96 flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <div className="text-4xl mb-4">💬</div>
-                    <p className="font-medium">AI Chat Assistant</p>
-                    <p className="text-sm">Screenshot #7</p>
-                  </div>
-                </div>
-              </div>
+              <Image
+                src="/images/website content/ai-chat.png"
+                alt="AI Chat Assistant Screenshot"
+                width={600}
+                height={900}
+                className="w-full max-w-2xl mx-auto"
+              />
             </div>
 
             {/* Right Content */}
