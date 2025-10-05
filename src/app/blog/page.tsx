@@ -1,6 +1,8 @@
 // src/app/blog/page.tsx
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
+import { WaitlistForm } from "@/components/WaitlistForm";
+import { Button } from "@/components/ui/button";
 
 export default function BlogPage() {
   const allPosts = getSortedPostsData();
@@ -76,12 +78,14 @@ export default function BlogPage() {
             Get the latest pet care tips, local guides, and PawPal updates delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://www.apple.com/app-store/"
-              className="bg-white text-[#345045] hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300"
-            >
-              📱 Download PawPal
-            </a>
+            <WaitlistForm variant="hero">
+              <Button
+                className="bg-white text-[#345045] hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300"
+                size="lg"
+              >
+                Get Early Access
+              </Button>
+            </WaitlistForm>
             <a
               href="/contact"
               className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
