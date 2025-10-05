@@ -81,7 +81,6 @@ export default function BlogPage() {
             <WaitlistForm variant="hero">
               <Button
                 className="bg-white text-[#345045] hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300"
-                size="lg"
               >
                 Get Early Access
               </Button>
