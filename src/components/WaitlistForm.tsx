@@ -197,23 +197,36 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                       <span className="text-lg">📧</span>
                       Check your email!
                     </h4>
-                    <p className="text-xs text-blue-700 mb-2">
-                      We've sent you a welcome email with your early access benefits. Over the next few days, you'll receive:
+                    <p className="text-xs text-blue-700 mb-3">
+                      We've sent you a welcome email to confirm your spot on the waitlist.
                     </p>
-                    <ul className="text-xs text-blue-700 space-y-1">
-                      <li className="flex items-center gap-2">
-                        <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-                        Personalized pet care tips for <span className="font-medium">{formData.petName}</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-                        App development updates
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="w-1 h-1 bg-blue-400 rounded-full"></span>
-                        Exclusive early access invitation
-                      </li>
-                    </ul>
+                    <p className="text-xs text-blue-700">
+                      <strong>What's next?</strong> We're working hard to bring you the best pet care experience. You'll be among the first to know when PawPal is ready to launch!
+                    </p>
+                  </div>
+
+                  <div className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200 shadow-sm">
+                    <h4 className="text-sm font-semibold text-purple-800 mb-2 flex items-center gap-2">
+                      <span className="text-lg">🐾</span>
+                      While you wait...
+                    </h4>
+                    <p className="text-xs text-purple-700 mb-2">
+                      Follow us on social media for pet care tips and behind-the-scenes development updates!
+                    </p>
+                    <div className="flex gap-3 justify-center mt-3">
+                      <a 
+                        href="#" 
+                        className="text-xs bg-purple-100 hover:bg-purple-200 text-purple-700 px-3 py-1 rounded-full transition-colors duration-200"
+                      >
+                        📱 Instagram
+                      </a>
+                      <a 
+                        href="#" 
+                        className="text-xs bg-purple-100 hover:bg-purple-200 text-purple-700 px-3 py-1 rounded-full transition-colors duration-200"
+                      >
+                        🐦 Twitter
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
