@@ -80,14 +80,14 @@ export default function BlogPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <WaitlistForm variant="hero">
               <Button
-                className="bg-white text-[#345045] hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300"
+                className="bg-white text-[#345045] hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 h-12"
               >
                 Get Early Access
               </Button>
             </WaitlistForm>
             <a
               href="/contact"
-              className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300"
+              className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all duration-300 h-12 flex items-center justify-center"
             >
               Contact Us
             </a>

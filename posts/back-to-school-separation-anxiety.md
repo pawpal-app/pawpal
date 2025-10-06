@@ -97,8 +97,3 @@ The thought of finding someone trustworthy to check on your pup can be stressful
 - **Easy booking:** Schedule care with just a few taps
 
 Give your pup a mid-day break and give yourself peace of mind.
-
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://www.apple.com/app-store/" style="display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem; background-color: #2D6063; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">📱 Download on the Apple App Store</a>
-  <a href="https://play.google.com/store/apps" style="display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem; background-color: #2D6063; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">🤖 Get it on the Google Play Store</a>
-</div>

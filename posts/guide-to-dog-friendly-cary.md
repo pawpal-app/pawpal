@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide to Dog-Friendly Cary: 12 Spots Your Pup Will Love"
-date: "2025-08-25"
+date: "2025-09-25"
 author: "The PawPal Team"
 coverImage: "/images/blog/dog-at-bond-park.jpg"
 excerpt: "Cary is an incredibly pet-friendly town, filled with green spaces and welcoming businesses. Here are 12 of the best spots to explore with your dog."
@@ -178,9 +178,4 @@ Keeping track of all these amazing places can be tough. That's why we built **Pa
 - Connect with other pet owners in your neighborhood
 - Access exclusive deals at local pet-friendly businesses
 
-Download PawPal for free today and never miss a pet-friendly adventure in Cary!
-
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="https://www.apple.com/app-store/" style="display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem; background-color: #2D6063; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">📱 Download on the Apple App Store</a>
-  <a href="https://play.google.com/store/apps" style="display: inline-block; margin: 0.5rem; padding: 0.75rem 1.5rem; background-color: #2D6063; color: white; text-decoration: none; border-radius: 0.5rem; font-weight: 600;">🤖 Get it on the Google Play Store</a>
-</div>
+Join the PawPal community today and never miss a pet-friendly adventure in Cary!
