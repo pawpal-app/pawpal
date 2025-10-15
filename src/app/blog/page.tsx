@@ -13,7 +13,7 @@ export default function BlogPage() {
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl lg:text-6xl font-bold text-[#163031] mb-6">
-            The PawPal Blog
+            The Animo Blog
           </h1>
           <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Expert tips, local guides, and insights to help you care for your pets with confidence
@@ -37,7 +37,7 @@ export default function BlogPage() {
               <div className="p-8">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-8 h-8 bg-gradient-to-br from-[#66a4a8] to-[#2D6063] rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">PP</span>
+                    <span className="text-white font-bold text-xs">A</span>
                   </div>
                   <div>
                     <p className="text-gray-500 text-sm">{date}</p>
@@ -72,10 +72,10 @@ export default function BlogPage() {
         {/* Call to Action Section */}
         <div className="mt-16 bg-gradient-to-br from-[#66a4a8] to-[#2D6063] rounded-2xl p-8 lg:p-12 text-center text-white">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Stay Updated with PawPal
+            Stay Updated with Animo
           </h2>
           <p className="text-xl mb-8 text-gray-200 max-w-2xl mx-auto">
-            Get the latest pet care tips, local guides, and PawPal updates delivered to your inbox.
+            Get the latest pet care tips, local guides, and Animo by PawPal updates delivered to your inbox.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <WaitlistForm variant="hero">

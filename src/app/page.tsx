@@ -16,9 +16,21 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center w-full py-8 sm:py-12 lg:py-20">
             {/* Left Content */}
             <div className="text-center lg:text-left">
-              <h1 className="text-2xl sm:text-3xl lg:text-5xl leading-tight mb-4 sm:mb-6 text-[#ffffff] font-bold">
-                PawPal: Your AI Pet Care Assistant
-              </h1>
+              <div className="mb-4 sm:mb-6">
+                <div className="flex flex-col items-center lg:items-start">
+                  <div className="flex items-baseline gap-2 mb-2">
+                    <h1 className="text-2xl sm:text-3xl lg:text-5xl leading-tight text-[#ffffff] font-bold">
+                      Animo
+                    </h1>
+                    <span className="text-sm sm:text-base lg:text-lg text-[#ffffff]/70 font-normal">
+                      by PawPal
+                    </span>
+                  </div>
+                  <p className="text-base sm:text-lg lg:text-xl text-[#ffffff]/90 font-medium">
+                    Your AI Pet Care Assistant
+                  </p>
+                </div>
+              </div>
               <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 text-[#ffffff] font-medium">
                 Confidently care for your pets with personalized to-dos, smart reminders, and instant answers — all in one app.
               </p>
@@ -36,7 +48,7 @@ export default function Home() {
                   className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg w-full sm:w-auto"
                   size="lg"
                 >
-                  Discover PawPal
+                  Discover Animo
                 </Button>
               </div>
             </div>
@@ -73,7 +85,7 @@ export default function Home() {
               Everything You Need to Care for Your Pet
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              With AI-powered guidance, PawPal removes the unknowns of pet ownership
+              With AI-powered guidance, Animo removes the unknowns of pet ownership
             </p>
           </div>
 
@@ -92,7 +104,7 @@ export default function Home() {
               {
                 icon: "💬",
                 title: "Pet Care Chat Assistant",
-                description: "Powered by learning AI that's always improving, PawPal gives you trusted answers around the clock."
+                description: "Powered by learning AI that's always improving, Animo gives you trusted answers around the clock."
               },
               {
                 icon: "📖",
@@ -132,7 +144,7 @@ export default function Home() {
                 Never Wonder What's Next
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                PawPal generates daily tasks tailored to your pet's age, type, and needs. Swipe to accept or dismiss, just like your favorite apps. From puppy vaccines to senior checkups, PawPal takes the guesswork out of pet care.
+                Animo generates daily tasks tailored to your pet's age, type, and needs. Swipe to accept or dismiss, just like your favorite apps. From puppy vaccines to senior checkups, Animo takes the guesswork out of pet care.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -197,7 +209,7 @@ export default function Home() {
                 Reminders That Actually Work
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                PawPal keeps you on track with gentle nudges — lock screen notifications, calendar reminders, and follow-ups if you forget. Never miss an appointment, medication, or daily care task.
+                Animo keeps you on track with gentle nudges — lock screen notifications, calendar reminders, and follow-ups if you forget. Never miss an appointment, medication, or daily care task.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -234,7 +246,7 @@ export default function Home() {
                 Capture Every Moment
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                Track your pet's mood, log health updates, and upload daily photos. Keep it private or share with friends in your PawPal feed — building a history you'll cherish for years.
+                Track your pet's mood, log health updates, and upload daily photos. Keep it private or share with friends in your Animo feed — building a history you'll cherish for years.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -296,7 +308,7 @@ export default function Home() {
                 Instant Answers, Anytime
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                Got a quick question? Just ask PawPal. Our AI assistant is here 24/7 with trustworthy pet-care insights — from diet concerns to training tips. Chat history makes it easy to look back later.
+                Got a quick question? Just ask Animo. Our AI assistant is here 24/7 with trustworthy pet-care insights — from diet concerns to training tips. Chat history makes it easy to look back later.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -333,7 +345,7 @@ export default function Home() {
                 Share with Fellow Pet Lovers
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                With PawPal's social feed, you can follow friends and share adorable moments — all in one place.
+                With Animo's social feed, you can follow friends and share adorable moments — all in one place.
                 From first walks to birthday treats, see every update that makes pet parenting special.
               </p>
               <div className="space-y-4">
@@ -363,7 +375,7 @@ export default function Home() {
                 {/* Social Feed Image */}
                 <Image
                   src="/images/website content/social-feed.png"
-                  alt="PawPal Social Feed"
+                  alt="Animo Social Feed"
                   width={600}
                   height={400}
                   sizes="(max-width: 640px) 100vw, 600px"
@@ -383,7 +395,7 @@ export default function Home() {
               <div className="w-full max-w-md lg:max-w-xl lg:pr-8 mx-auto overflow-hidden">
                 <Image
                   src="/images/website content/pet-profiles.png"
-                  alt="Multi-pet profiles and onboarding setup - PawPal"
+                  alt="Multi-pet profiles and onboarding setup - Animo"
                   width={600}
                   height={338}
                   sizes="(max-width: 640px) 100vw, 600px"
@@ -399,7 +411,7 @@ export default function Home() {
                 One App, All Your Pets
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                Dogs, cats, rabbits, etc. — PawPal makes it simple to add multiple pets and switch between them. Each profile gets personalized to-dos and reminders tailored to their unique needs.
+                Dogs, cats, rabbits, etc. — Animo makes it simple to add multiple pets and switch between them. Each profile gets personalized to-dos and reminders tailored to their unique needs.
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
@@ -458,7 +470,7 @@ export default function Home() {
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#163031] mb-3 sm:mb-4">Create Your Pet's Profile in Seconds</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Add your pet's name, age, and breed, and PawPal instantly tailors reminders and advice to their unique needs. ✨
+                Add your pet's name, age, and breed, and Animo instantly tailors reminders and advice to their unique needs. ✨
               </p>
             </div>
 
@@ -474,7 +486,7 @@ export default function Home() {
               </div>
               <h3 className="text-base sm:text-lg font-bold text-[#163031] mb-3 sm:mb-4">Swipe Through Smart Suggestions</h3>
               <p className="text-sm text-gray-600 leading-relaxed">
-                Review personalized tasks generated just for your pet. Accept or dismiss with a quick swipe — PawPal learns what matters to you. ✅
+                Review personalized tasks generated just for your pet. Accept or dismiss with a quick swipe — Animo learns what matters to you. ✅
               </p>
             </div>
 
@@ -536,7 +548,7 @@ export default function Home() {
               What Pet Parents Are Saying
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              See how PawPal is helping pet owners feel more confident and connected to their pets
+              See how Animo is helping pet owners feel more confident and connected to their pets
             </p>
           </div>
 
@@ -554,7 +566,7 @@ export default function Home() {
                 </div>
               </div>
               <blockquote className="text-gray-800 text-sm sm:text-base leading-relaxed font-medium">
-                "I finally feel confident as a first-time puppy owner. PawPal's AI to-dos take away all the guesswork!"
+                "I finally feel confident as a first-time puppy owner. Animo's AI to-dos take away all the guesswork!"
               </blockquote>
             </div>
 
@@ -586,7 +598,7 @@ export default function Home() {
                 </div>
               </div>
               <blockquote className="text-gray-800 text-sm sm:text-base leading-relaxed font-medium">
-                "I love that PawPal reminds me about things before I forget. The notifications actually work!"
+                "I love that Animo reminds me about things before I forget. The notifications actually work!"
               </blockquote>
             </div>
           </div>
@@ -645,7 +657,7 @@ export default function Home() {
             More Time for What Truly Matters.
           </h2>
           <p className="text-base sm:text-lg lg:text-xl mb-8 sm:mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            Join the community of modern pet parents making pet care effortless with PawPal.
+            Join the community of modern pet parents making pet care effortless with Animo by PawPal.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
             <WaitlistForm variant="cta">
@@ -710,7 +722,7 @@ export default function Home() {
 
           {/* Copyright and Links */}
           <div className="text-center text-gray-500 space-y-4">
-            <p className="text-xs">Copyright © 2025 PawPal LLC. All rights reserved.</p>
+            <p className="text-xs">Copyright © 2025 Animo by PawPal LLC. All rights reserved.</p>
             <div className="flex justify-center space-x-4 sm:space-x-6 text-xs">
               <Link href="/terms" className="hover:text-[#66a4a8] transition-colors">Terms of Service</Link>
               <Link href="/privacy" className="hover:text-[#66a4a8] transition-colors">Privacy Policy</Link>

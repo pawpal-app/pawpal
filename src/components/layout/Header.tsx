@@ -21,10 +21,10 @@ export function Header() {
         <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
           <img
             src="https://ugc.same-assets.com/lDb0fXjL-jpPYAZZTJOdg7au2HDrnHxv.png"
-            alt="PAWPAL Logo"
+            alt="Animo by PawPal Logo"
             className="h-8 w-8 object-cover"
           />
-          <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">PawPal</span>
+          <span className="text-xl font-bold text-[#2D6063] lg:text-[30px]">Animo</span>
         </Link>
 
         {/* Desktop Navigation Menu */}

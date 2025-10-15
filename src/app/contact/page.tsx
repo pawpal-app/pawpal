@@ -38,9 +38,9 @@ export default function ContactPage() {
         <div className="w-full max-w-lg lg:max-w-2xl bg-white rounded-lg shadow-lg p-4 lg:p-6">
           {/* Title and Subtitle */}
           <div className="mb-6 lg:mb-8 text-center">
-            <h1 className="text-2xl lg:text-3xl font-bold text-[#2D6063] mb-2">Contact Support</h1>
+            <h1 className="text-2xl lg:text-3xl font-bold text-[#2D6063] mb-2">Contact Animo Support</h1>
             <p className="text-sm lg:text-base text-gray-600">
-              Have a question or need help? Our team is here for you!
+              Have a question or need help? Our Animo by PawPal team is here for you!
             </p>
           </div>
 
@@ -101,17 +101,17 @@ export default function ContactPage() {
           <div className="text-center text-xs lg:text-sm text-gray-600 mb-6 lg:mb-8">
             You can also reach us at:{" "}
             <a
-              href="mailto:support@getpawpalapp.com"
+              href="mailto:support@getanimoapp.com"
               className="text-[#345045] underline hover:text-[#2D6063] transition-colors"
             >
-              support@getpawpalapp.com
+              support@getanimoapp.com
             </a>
           </div>
 
           {/* Emergency Notice */}
           <div className="mt-6 lg:mt-8 p-3 lg:p-4 bg-red-50 border border-red-200 rounded text-center">
             <span className="font-semibold text-red-700 text-xs lg:text-sm">Emergency Pet Care:</span>{" "}
-            <span className="text-xs lg:text-sm text-red-700">If your pet is experiencing a medical emergency, please contact your veterinarian or local animal hospital immediately. PawPal support is not equipped to handle urgent medical situations.</span>
+            <span className="text-xs lg:text-sm text-red-700">If your pet is experiencing a medical emergency, please contact your veterinarian or local animal hospital immediately. Animo support is not equipped to handle urgent medical situations.</span>
           </div>
         </div>
       </main>

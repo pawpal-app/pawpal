@@ -143,7 +143,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
             <DialogHeader>
               <DialogTitle className="text-2xl font-bold flex items-center justify-center gap-2">
                 <span className="text-3xl">🐾</span>
-                Join the PawPal Family
+                Join the Animo Family
               </DialogTitle>
               <p className="text-[#eff3f3] mt-2 text-sm text-center">
                 Get early access to AI-powered pet care
@@ -178,7 +178,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                 </div>
                 
                 <h3 className="text-2xl font-bold text-[#2D6063] mb-3">
-                  Welcome to the PawPal Family!
+                  Welcome to the Animo Family!
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Thank you for signing up! We'll keep you updated on our launch and send you exclusive early access when we're ready.
@@ -188,7 +188,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                   <div className="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200 shadow-sm">
                     <p className="text-sm text-green-700 font-medium flex items-center gap-2">
                       <span className="text-lg">🎯</span>
-                      You're now on the list for early access to PawPal's AI-powered pet care features!
+                      You're now on the list for early access to Animo's AI-powered pet care features!
                     </p>
                   </div>
 
@@ -201,7 +201,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                       We've sent you a welcome email to confirm your spot on the waitlist.
                     </p>
                     <p className="text-xs text-blue-700">
-                      <strong>What's next?</strong> We're working hard to bring you the best pet care experience. You'll be among the first to know when PawPal is ready to launch!
+                      <strong>What's next?</strong> We're working hard to bring you the best pet care experience. You'll be among the first to know when Animo is ready to launch!
                     </p>
                   </div>
 
@@ -369,7 +369,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                     <div className="max-w-md mx-auto space-y-4">
                       <div className="space-y-2">
                         <Label htmlFor="interests" className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                          <span>🌟</span>What interests you most about PawPal? (optional)
+                          <span>🌟</span>What interests you most about Animo? (optional)
                         </Label>
                         <Textarea
                           id="interests"
@@ -462,7 +462,7 @@ export function WaitlistForm({ children, variant = "hero" }: WaitlistFormProps) 
                 </div>
 
                 <p className="text-xs text-gray-500 text-center pt-2">
-                  By joining, you agree to receive updates about PawPal. We respect your privacy and won't spam you.
+                  By joining, you agree to receive updates about Animo. We respect your privacy and won't spam you.
                 </p>
               </form>
             )}

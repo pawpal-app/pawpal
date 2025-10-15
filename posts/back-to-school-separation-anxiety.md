@@ -1,7 +1,7 @@
 ---
 title: "Back to School Blues: 5 Ways to Help Your Dog Cope with Separation Anxiety"
 date: "2025-08-25"
-author: "The PawPal Team"
+author: "The Animo Team"
 coverImage: "/images/blog/dog-by-window.jpg"
 excerpt: "After a summer of constant companionship, the sudden shift to a quiet, empty house can be jarring. Here are five ways to ease their back-to-school blues."
 ---
@@ -82,15 +82,15 @@ For many dogs, the biggest challenge is the **long, uninterrupted stretch of tim
 - **Come home yourself** (if your schedule allows)
 - **Ask a trusted neighbor** to check in
 - **Hire a professional dog walker**
-- **Use a pet care service** like PawPal
+- **Use a pet care service** like Animo by PawPal
 
 ---
 
-## 🐾 Don't Have a Dog Walker? PawPal Can Help
+## 🐾 Don't Have a Dog Walker? Animo by PawPal Can Help
 
-The thought of finding someone trustworthy to check on your pup can be stressful. That's why we created the **PawPal community**.
+The thought of finding someone trustworthy to check on your pup can be stressful. That's why we created the **Animo by PawPal community**.
 
-### What Makes PawPal Different:
+### What Makes Animo by PawPal Different:
 - **Background-checked pet lovers** in your Cary neighborhood
 - **Flexible services:** Quick walks, drop-in visits, or extended care
 - **Safe and secure:** All interactions are monitored and insured

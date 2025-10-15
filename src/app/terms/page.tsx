@@ -13,14 +13,14 @@ export default function TermsOfService() {
           <div className="space-y-4 lg:space-y-6">
             <section>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed mb-4 lg:mb-6">
-                Welcome to PawPal! By accessing or using our services, including the PawPal application (the "App"), website (the "Site"), and any associated services (the "Services"), you agree to comply with and be bound by these Terms of Service ("Terms" or "Agreement"). If you do not agree, you may not use the Services.
+                Welcome to Animo by PawPal! By accessing or using our services, including the Animo application (the "App"), website (the "Site"), and any associated services (the "Services"), you agree to comply with and be bound by these Terms of Service ("Terms" or "Agreement"). If you do not agree, you may not use the Services.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">1. Acceptance of Terms</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                These Terms govern your use of PawPal's Services. By using the Services, you agree to be bound by these Terms and any updates. PawPal may update these Terms from time to time, and your continued use constitutes acceptance of the revised Terms.
+                These Terms govern your use of Animo by PawPal's Services. By using the Services, you agree to be bound by these Terms and any updates. Animo by PawPal may update these Terms from time to time, and your continued use constitutes acceptance of the revised Terms.
               </p>
             </section>
 
@@ -39,7 +39,7 @@ export default function TermsOfService() {
                   <li>Provide accurate and truthful information.</li>
                   <li>Keep your account details up to date.</li>
                   <li>Maintain the confidentiality of your login credentials.</li>
-                  <li>Notify PawPal immediately of unauthorized use.</li>
+                  <li>Notify Animo by PawPal immediately of unauthorized use.</li>
                 </ul>
                 <p className="mt-3">You are responsible for all activity under your account.</p>
               </div>
@@ -56,7 +56,7 @@ export default function TermsOfService() {
                   <li>Use the Services for unlawful, harmful, or abusive purposes.</li>
                   <li>Provide false or misleading information about yourself or your pet(s).</li>
                 </ul>
-                <p className="mt-3">PawPal may suspend or terminate accounts that violate these rules.</p>
+                <p className="mt-3">Animo by PawPal may suspend or terminate accounts that violate these rules.</p>
               </div>
             </section>
 
@@ -64,7 +64,7 @@ export default function TermsOfService() {
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">5. Medical Disclaimer</h2>
               <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 lg:p-4">
                 <p className="text-sm lg:text-base text-gray-700 leading-relaxed font-medium">
-                  <strong>Important:</strong> PawPal is not a substitute for professional veterinary care. The information, reminders, and AI-generated guidance provided by PawPal are for general informational purposes only. Always consult a qualified veterinarian regarding your pet's health and medical needs. Reliance on the Services for medical decisions is at your own risk.
+                  <strong>Important:</strong> Animo by PawPal is not a substitute for professional veterinary care. The information, reminders, and AI-generated guidance provided by Animo are for general informational purposes only. Always consult a qualified veterinarian regarding your pet's health and medical needs. Reliance on the Services for medical decisions is at your own risk.
                 </p>
               </div>
             </section>
@@ -72,22 +72,22 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">6. Privacy and Data</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                Your use of the Services is also governed by our Privacy Policy. PawPal may collect and process personal and pet-related information to operate and improve the Services. Third-party tools (e.g., payment processors, analytics) may apply their own privacy terms.
+                Your use of the Services is also governed by our Privacy Policy. Animo by PawPal may collect and process personal and pet-related information to operate and improve the Services. Third-party tools (e.g., payment processors, analytics) may apply their own privacy terms.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">7. User Content</h2>
               <div className="text-sm lg:text-base text-gray-700 leading-relaxed space-y-2">
-                <p>You retain ownership of the content you share (e.g., pet profiles, images, posts). By submitting content, you grant PawPal a worldwide, non-exclusive, royalty-free license to use, display, and distribute it for providing and promoting the Services.</p>
-                <p>You represent and warrant that you own or have permission to share such content and that it does not infringe third-party rights. PawPal may remove inappropriate or unlawful content.</p>
+                <p>You retain ownership of the content you share (e.g., pet profiles, images, posts). By submitting content, you grant Animo by PawPal a worldwide, non-exclusive, royalty-free license to use, display, and distribute it for providing and promoting the Services.</p>
+                <p>You represent and warrant that you own or have permission to share such content and that it does not infringe third-party rights. Animo by PawPal may remove inappropriate or unlawful content.</p>
               </div>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">8. Fees and Payments</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                Some features may require payment. By submitting payment details, you authorize PawPal or its payment partners to process charges. Payments are non-refundable unless otherwise stated. If payment fails, access to premium features may be suspended.
+                Some features may require payment. By submitting payment details, you authorize Animo by PawPal or its payment partners to process charges. Payments are non-refundable unless otherwise stated. If payment fails, access to premium features may be suspended.
               </p>
             </section>
 
@@ -101,43 +101,43 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">10. License to Use</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                PawPal grants you a limited, non-exclusive, non-transferable license to use the Services for personal, non-commercial purposes. You may not copy, modify, reverse-engineer, or exploit the Services without written permission.
+                Animo by PawPal grants you a limited, non-exclusive, non-transferable license to use the Services for personal, non-commercial purposes. You may not copy, modify, reverse-engineer, or exploit the Services without written permission.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">11. Termination</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                PawPal may suspend or terminate your account for violating these Terms or engaging in unlawful activity. You may terminate your account at any time through the App or Site.
+                Animo by PawPal may suspend or terminate your account for violating these Terms or engaging in unlawful activity. You may terminate your account at any time through the App or Site.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">12. Intellectual Property</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                The Services, including software, design, trademarks, and branding, are owned by or licensed to PawPal. You may not use them without prior written consent.
+                The Services, including software, design, trademarks, and branding, are owned by or licensed to Animo by PawPal. You may not use them without prior written consent.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">13. Limitation of Liability</h2>
               <div className="text-sm lg:text-base text-gray-700 leading-relaxed space-y-2">
-                <p>To the fullest extent permitted by law, PawPal and its affiliates, officers, employees, and partners assume no liability whatsoever for any damages, losses, or claims arising out of or related to your use of the Services, including but not limited to:</p>
+                <p>To the fullest extent permitted by law, Animo by PawPal and its affiliates, officers, employees, and partners assume no liability whatsoever for any damages, losses, or claims arising out of or related to your use of the Services, including but not limited to:</p>
                 <ul className="list-disc list-inside space-y-1 ml-3 lg:ml-4">
                   <li>Errors, omissions, or delays in the Services.</li>
                   <li>Loss of data, missed reminders, or scheduling errors.</li>
                   <li>Reliance on AI-generated suggestions, advice, or guidance.</li>
                   <li>Any indirect, incidental, special, consequential, or punitive damages.</li>
-                  <li>Any injury, harm, illness, or adverse outcome affecting pets or their wellbeing resulting from the use of information, recommendations, or features provided by the PawPal app.</li>
+                  <li>Any injury, harm, illness, or adverse outcome affecting pets or their wellbeing resulting from the use of information, recommendations, or features provided by the Animo app.</li>
                 </ul>
-                <p className="mt-3">You acknowledge that PawPal is a digital tool meant for informational and organizational purposes only and does not replace professional veterinary advice or care.</p>
+                <p className="mt-3">You acknowledge that Animo by PawPal is a digital tool meant for informational and organizational purposes only and does not replace professional veterinary advice or care.</p>
               </div>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">14. Indemnification</h2>
               <div className="text-sm lg:text-base text-gray-700 leading-relaxed space-y-2">
-                <p>You agree to indemnify and hold harmless PawPal, its affiliates, and team members from claims, damages, or expenses arising out of:</p>
+                <p>You agree to indemnify and hold harmless Animo by PawPal, its affiliates, and team members from claims, damages, or expenses arising out of:</p>
                 <ul className="list-disc list-inside space-y-1 ml-3 lg:ml-4">
                   <li>Your use of the Services.</li>
                   <li>Your violation of these Terms.</li>
@@ -170,14 +170,14 @@ export default function TermsOfService() {
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">18. Entire Agreement</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                These Terms, together with our Privacy Policy, constitute the entire agreement between you and PawPal regarding the Services.
+                These Terms, together with our Privacy Policy, constitute the entire agreement between you and Animo by PawPal regarding the Services.
               </p>
             </section>
 
             <section>
               <h2 className="text-lg lg:text-xl font-semibold text-[#345045] mb-2 lg:mb-3">19. Force Majeure</h2>
               <p className="text-sm lg:text-base text-gray-700 leading-relaxed">
-                PawPal is not liable for delays or failures due to circumstances beyond our control, including natural disasters, technical failures, or labor disputes.
+                Animo by PawPal is not liable for delays or failures due to circumstances beyond our control, including natural disasters, technical failures, or labor disputes.
               </p>
             </section>
 
@@ -188,8 +188,8 @@ export default function TermsOfService() {
               </p>
               <div className="bg-gray-50 rounded-lg p-3 lg:p-4 mt-3">
                 <p className="text-sm lg:text-base text-gray-700">
-                  <strong>PawPal Support</strong><br />
-                  📧 support@getpawpalapp.com
+                  <strong>Animo by PawPal Support</strong><br />
+                  📧 <Link href="mailto:support@getanimoapp.com" className="text-blue-600 hover:text-blue-800 underline">support@getanimoapp.com</Link>
                 </p>
               </div>
             </section>
@@ -197,7 +197,7 @@ export default function TermsOfService() {
 
           <div className="mt-8 lg:mt-10 pt-6 border-t border-gray-200">
             <p className="text-center text-xs lg:text-sm text-gray-500">
-              © 2025 PawPal LLC. All rights reserved.
+              © 2025 Animo by PawPal LLC. All rights reserved.
             </p>
           </div>
         </div>

@@ -39,10 +39,13 @@ export default function EmailPreview() {
             <Link href="/" className="flex items-center space-x-2">
               <img
                 src="https://ext.same-assets.com/482647744/2678245851.png"
-                alt="PAWPAL Logo"
+                alt="Animo by PawPal Logo"
                 className="h-8 w-8"
               />
-              <span className="text-xl font-bold text-[#345045]">PAWPAL</span>
+              <div className="flex items-baseline space-x-1">
+                <span className="text-xl font-bold text-[#345045]">Animo</span>
+                <span className="text-sm text-[#345045]/70">by PawPal</span>
+              </div>
             </Link>
             <span className="text-gray-400">|</span>
             <h1 className="text-2xl font-bold text-gray-800">Email Preview System</h1>

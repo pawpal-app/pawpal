@@ -1,14 +1,14 @@
 ---
 title: "The Ultimate Guide to Dog-Friendly Cary: 12 Spots Your Pup Will Love"
 date: "2025-09-25"
-author: "The PawPal Team"
+author: "The Animo Team"
 coverImage: "/images/blog/dog-at-bond-park.jpg"
 excerpt: "Cary is an incredibly pet-friendly town, filled with green spaces and welcoming businesses. Here are 12 of the best spots to explore with your dog."
 ---
 
 The North Carolina sun is shining, a cool breeze is hinting at the start of fall, and the last thing you want to do is leave your furry best friend cooped up at home. The great news? **You don't have to!** 
 
-Cary is an incredibly pet-friendly town, filled with green spaces, welcoming businesses, and exciting adventures for you and your dog to share. But knowing exactly where to go can be a challenge. That's why we at PawPal have created the **ultimate guide** to the best dog-friendly spots in Cary.
+Cary is an incredibly pet-friendly town, filled with green spaces, welcoming businesses, and exciting adventures for you and your dog to share. But knowing exactly where to go can be a challenge. That's why we at Animo by PawPal have created the **ultimate guide** to the best dog-friendly spots in Cary.
 
 Let's get exploring! 🐾
 
@@ -164,9 +164,9 @@ A **true Cary landmark!** Grab a classic hot dog or an orangeade from their old-
 
 ## 🗺️ Ready to Put This Guide in Your Pocket?
 
-Keeping track of all these amazing places can be tough. That's why we built **PawPal**.
+Keeping track of all these amazing places can be tough. That's why we built **Animo by PawPal**.
 
-### What PawPal Offers:
+### What Animo by PawPal Offers:
 - **Interactive Map:** All these locations (and more!) right at your fingertips
 - **Local Pet Services:** Connect with trusted pet care providers
 - **Community Features:** Find new walking buddies and pet friends
@@ -178,4 +178,4 @@ Keeping track of all these amazing places can be tough. That's why we built **Pa
 - Connect with other pet owners in your neighborhood
 - Access exclusive deals at local pet-friendly businesses
 
-Join the PawPal community today and never miss a pet-friendly adventure in Cary!
+Join the Animo by PawPal community today and never miss a pet-friendly adventure in Cary!

@@ -29,7 +29,7 @@ export default async function BlogPostPage({ params }: Props) { // <-- And using
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-[#66a4a8] to-[#2D6063] rounded-full flex items-center justify-center shadow-sm">
-                <span className="text-white font-bold text-sm">PP</span>
+                <span className="text-white font-bold text-sm">A</span>
               </div>
               <div>
                 <p className="text-[#345045] font-semibold text-sm">{postData.author}</p>
@@ -75,7 +75,7 @@ export default async function BlogPostPage({ params }: Props) { // <-- And using
             Ready to Simplify Pet Care?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of pet parents who trust PawPal to remove the unknowns and make pet care effortless.
+            Join thousands of pet parents who trust Animo by PawPal to remove the unknowns and make pet care effortless.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <WaitlistForm variant="cta">
