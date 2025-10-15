@@ -15,7 +15,7 @@ export function Header() {
   };
 
   return (
-    <header className="relative z-10 px-4 py-4 lg:px-8 bg-white/80 backdrop-blur-sm sticky top-0">
+    <header className="z-10 px-4 py-4 lg:px-8 bg-white/80 backdrop-blur-sm sticky top-0">
       <nav className="flex items-center justify-between max-w-7xl mx-auto">
         {/* Logo - Also updated to be a Link to the homepage */}
         <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
