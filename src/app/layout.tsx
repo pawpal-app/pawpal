@@ -10,32 +10,10 @@ import { Header } from "../components/layout/Header";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PawPal",
-  description: "Your Pet's Personal AI Assistant",
+  title: "Animo",
+  description: "Care, Capture, Connect",
   manifest: '/manifest.json',
   viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
-  icons: {
-    icon: [
-      {
-        url: '/pawpal-circle-logo.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/pawpal-circle-logo.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-    ],
-    shortcut: '/pawpal-circle-logo.png',
-    apple: [
-      {
-        url: '/pawpal-circle-logo.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
-  },
 };
 
 export default function RootLayout({
@@ -47,7 +25,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         
-        {/* ✅ 2. CHECK THIS LINE: Make sure <Header /> is the first thing inside the <body> */}
         <Header />
         
         {children}

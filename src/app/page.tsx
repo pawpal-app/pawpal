@@ -27,12 +27,12 @@ export default function Home() {
                     </span>
                   </div>
                   <p className="text-base sm:text-lg lg:text-xl text-[#ffffff]/90 font-medium">
-                    Your AI Pet Care Assistant
+                    Care, Capture, Connect
                   </p>
                 </div>
               </div>
               <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 text-[#ffffff] font-medium">
-                Confidently care for your pets with personalized to-dos, smart reminders, and instant answers — all in one app.
+                Built for the modern pet parent. Confidently care for your pets with personalized to-dos, smart reminders, and instant answers — all in one app!
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
                 <WaitlistForm variant="hero">
