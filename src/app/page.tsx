@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { WaitlistForm } from "@/components/WaitlistForm";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -35,14 +34,19 @@ export default function Home() {
                 Built for the modern pet parent. Confidently care for your pets with personalized to-dos, smart reminders, and instant answers — all in one app!
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-6 sm:mb-8">
-                <WaitlistForm variant="hero">
+                <a
+                  href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
                   <Button
                     className="bg-white text-[#345045] hover:bg-gray-50 border border-gray-300 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg shadow-lg w-full sm:w-auto"
                     size="lg"
                   >
-                    Get Early Access!
+                    Download on App Store
                   </Button>
-                </WaitlistForm>
+                </a>
                 <Button
                   onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
                   className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg w-full sm:w-auto"
@@ -527,14 +531,19 @@ export default function Home() {
 
           {/* CTA Button */}
           <div className="text-center mt-12">
-            <WaitlistForm variant="cta">
+            <a
+              href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
               <Button
                 className="bg-[#2D6063] text-white hover:bg-[#2a3f3a] px-8 py-4 text-base font-semibold rounded-lg shadow-lg"
                 size="lg"
               >
-                Start My Pet's Plan
+                Download Animo Now
               </Button>
-            </WaitlistForm>
+            </a>
           </div>
         </div>
       </section>
@@ -657,17 +666,22 @@ export default function Home() {
             More Time for What Truly Matters.
           </h2>
           <p className="text-base sm:text-lg lg:text-xl mb-8 sm:mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed">
-            Join the community of modern pet parents making pet care effortless with Animo by PawPal.
+            Join the community of modern pet parents making pet care effortless with Animo.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
-            <WaitlistForm variant="cta">
+            <a
+              href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            >
               <Button
                 className="bg-white text-[#345045] hover:bg-gray-50 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg shadow-lg w-full sm:w-auto"
                 size="lg"
               >
-                Get Early Access
+                Download on App Store
               </Button>
-            </WaitlistForm>
+            </a>
             <Link href="/blog">
               <Button
                 className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold rounded-lg w-full sm:w-auto"

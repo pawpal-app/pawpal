@@ -1,7 +1,6 @@
 // src/app/blog/[slug]/page.tsx
 import { getPostData, getAllPostSlugs } from "@/lib/posts";
 import Image from "next/image";
-import { WaitlistForm } from "@/components/WaitlistForm";
 import { Button } from "@/components/ui/button";
 
 // This function tells Next.js which blog posts exist
@@ -78,13 +77,18 @@ export default async function BlogPostPage({ params }: Props) { // <-- And using
             Join thousands of pet parents who trust Animo by PawPal to remove the unknowns and make pet care effortless.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-            <WaitlistForm variant="cta">
+            <a
+              href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block"
+            > 
               <Button
                 className="bg-white text-[#345045] hover:bg-gray-50 px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 h-12"
               >
-                Get Early Access
+                Download on App Store
               </Button>
-            </WaitlistForm>
+            </a>
             <a
               href="/contact"
               className="bg-transparent text-white hover:bg-white/10 border-2 border-white px-6 sm:px-8 py-4 text-base sm:text-lg font-semibold rounded-lg transition-all duration-300 h-12 flex items-center justify-center"

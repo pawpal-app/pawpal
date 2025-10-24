@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   description: "Care, Capture, Connect",
   manifest: '/manifest.json',
   viewport: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no',
+  icons: {
+    icon: '/animo-circle.png',
+    shortcut: '/animo-circle.png',
+    apple: '/animo-circle.png',
+  },
 };
 
 export default function RootLayout({

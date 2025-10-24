@@ -33,7 +33,7 @@ export function Header() {
             <Link href="/#features" className="text-gray-700 hover:text-[#345045] transition-colors">Features</Link>
             <Link href="/#how-it-works" className="text-gray-700 hover:text-[#345045] transition-colors">How it Works</Link>
             <Link href="/#testimonials" className="text-gray-700 hover:text-[#345045] transition-colors">Testimonials</Link>
-            <Link href="/#waitlist" className="text-gray-700 hover:text-[#345045] transition-colors">Waitlist</Link>
+            <a href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#345045] transition-colors">Download</a>
             <Link href="/blog" className="text-gray-700 hover:text-[#345045] transition-colors">Blog</Link>
         </div>
 
@@ -80,13 +80,15 @@ export function Header() {
           >
             Testimonials
           </Link>
-          <Link 
-            href="/#waitlist" 
+          <a 
+            href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492" 
+            target="_blank" 
+            rel="noopener noreferrer"
             className="block text-gray-700 hover:text-[#345045] transition-colors py-2"
             onClick={closeMenu}
           >
-            Waitlist
-          </Link>
+            Download
+          </a>
           <Link 
             href="/blog" 
             className="block text-gray-700 hover:text-[#345045] transition-colors py-2"
