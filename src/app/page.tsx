@@ -722,7 +722,7 @@ export default function Home() {
 
           {/* Copyright and Links */}
           <div className="text-center text-gray-500 space-y-4">
-            <p className="text-xs">Copyright © 2025 Animo by PawPal LLC. All rights reserved.</p>
+            <p className="text-xs">Copyright © 2025 Animo by PAWPAL LLC. All rights reserved.</p>
             <div className="flex justify-center space-x-4 sm:space-x-6 text-xs">
               <Link href="/terms" className="hover:text-[#66a4a8] transition-colors">Terms of Service</Link>
               <Link href="/privacy" className="hover:text-[#66a4a8] transition-colors">Privacy Policy</Link>

@@ -8,7 +8,7 @@ export default function PrivacyPolicy() {
       <main className="max-w-3xl mx-auto px-4 lg:px-8 py-6 lg:py-8">
         <div className="prose prose-sm lg:prose-base max-w-none">
           <h1 className="text-2xl lg:text-3xl font-bold text-[#345045] mb-4 lg:mb-6">Privacy Policy</h1>
-          <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6">Last updated: 15-October-2025</p>
+          <p className="text-sm lg:text-base text-gray-600 mb-4 lg:mb-6">Last updated: 24-October-2025</p>
 
           <div className="space-y-4 lg:space-y-6">
             <section>
