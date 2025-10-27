@@ -28,6 +28,7 @@ if (typeof window !== 'undefined') {
   auth = getAuth(app);
 } else {
   // Return a placeholder for SSR
+  app = {} as FirebaseApp;
   auth = {} as Auth;
 }
 
