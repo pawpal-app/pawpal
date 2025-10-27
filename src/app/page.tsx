@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { AppIcon } from "@/components/AppIcon";
 
 export default function Home() {
 
@@ -529,21 +530,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* App Download */}
           <div className="text-center mt-12">
-            <a
-              href="https://apps.apple.com/us/app/animo-care-capture-connect/id6754126492"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block"
-            >
-              <Button
-                className="bg-[#2D6063] text-white hover:bg-[#2a3f3a] px-8 py-4 text-base font-semibold rounded-lg shadow-lg"
-                size="lg"
-              >
-                Download Animo Now
-              </Button>
-            </a>
+            <div className="text-center">
+              <p className="text-sm text-gray-600 mb-2">Get started today</p>
+              <AppIcon size="md" className="hover:scale-105 transition-transform duration-200" />
+            </div>
           </div>
         </div>
       </section>
@@ -730,6 +722,17 @@ export default function Home() {
             >
               <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a 
+              href="https://www.linkedin.com/company/getanimoapp" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-[#66a4a8] transition-colors"
+              aria-label="Follow us on LinkedIn"
+            >
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.5A1.5 1.5 0 1 1 8 7a1.5 1.5 0 0 1-1.5 1.5zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
               </svg>
             </a>
           </div>

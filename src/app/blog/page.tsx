@@ -2,6 +2,7 @@
 import { getSortedPostsData } from "@/lib/posts";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { AppIcon } from "@/components/AppIcon";
 
 export default function BlogPage() {
   const allPosts = getSortedPostsData();
