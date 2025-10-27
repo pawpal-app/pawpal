@@ -37,13 +37,13 @@ function VerifyEmailContent() {
         setState('error');
         
         if (error.code === 'auth/expired-action-code') {
-          setErrorMessage('⚠️ This verification link has expired. Please request a new verification email from the Animo app.');
+          setErrorMessage('This verification link has expired. Please request a new verification email from the Animo app.');
         } else if (error.code === 'auth/invalid-action-code') {
-          setErrorMessage('⚠️ This verification link is invalid or has already been used. Please request a new verification email from the Animo app.');
+          setErrorMessage('This verification link is invalid or has already been used. Please request a new verification email from the Animo app.');
         } else if (error.code === 'auth/user-disabled') {
-          setErrorMessage('⚠️ This account has been disabled. Please contact support.');
+          setErrorMessage('This account has been disabled. Please contact support.');
         } else {
-          setErrorMessage('⚠️ Verification Failed. This link is invalid or has expired. Please try requesting a new verification email from the app.');
+          setErrorMessage('Verification Failed. This link is invalid or has expired. Please try requesting a new verification email from the app.');
         }
       }
     };

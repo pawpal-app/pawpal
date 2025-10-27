@@ -177,7 +177,7 @@ export default function Home() {
               <div className="w-full max-w-md lg:max-w-xl mx-auto overflow-hidden">
                 <Image
                   src="/images/website content/to-dos.png"
-                  alt="Swipeable to-do cards and reminder editing - PawPal"
+                  alt="Swipeable to-do cards and reminder editing - Animo"
                   width={600}
                   height={338}
                   sizes="(max-width: 640px) 100vw, 600px"
@@ -198,7 +198,7 @@ export default function Home() {
               <div className="w-full max-w-md lg:max-w-xl lg:pr-8 mx-auto overflow-hidden">
                 <Image
                   src="/images/website content/notifications-screenshot.png"
-                  alt="Lock screen notifications and upcoming reminders list - PawPal"
+                  alt="Lock screen notifications and upcoming reminders list - Animo"
                   width={600}
                   height={338}
                   sizes="(max-width: 640px) 100vw, 600px"
@@ -279,7 +279,7 @@ export default function Home() {
               <div className="w-full max-w-md lg:max-w-xl mx-auto overflow-hidden">
                 <Image
                   src="/images/website content/diary.png"
-                  alt="Daily diary entry and friends' feed - PawPal"
+                  alt="Daily diary entry and friends' feed - Animo"
                   width={600}
                   height={338}
                   sizes="(max-width: 640px) 100vw, 600px"
