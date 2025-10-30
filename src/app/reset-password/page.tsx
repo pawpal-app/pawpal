@@ -20,6 +20,21 @@ function ResetPasswordContent() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [formError, setFormError] = useState<string>('');
 
+  // Derived password validation
+  const passwordRules = {
+    length: newPassword.length >= 8 && newPassword.length <= 32,
+    lowercase: /[a-z]/.test(newPassword),
+    uppercase: /[A-Z]/.test(newPassword),
+    number: /[0-9]/.test(newPassword),
+    special: /[^A-Za-z0-9]/.test(newPassword),
+  };
+  const allRulesPass =
+    passwordRules.length &&
+    passwordRules.lowercase &&
+    passwordRules.uppercase &&
+    passwordRules.number &&
+    passwordRules.special;
+
   useEffect(() => {
     const verifyCode = async () => {
       try {
@@ -67,9 +82,9 @@ function ResetPasswordContent() {
       return;
     }
 
-    // Check password length (Firebase requires at least 6 characters)
-    if (newPassword.length < 6) {
-      setFormError('Password must be at least 6 characters long.');
+    // Enforce password policy
+    if (!allRulesPass) {
+      setFormError('Password must meet all requirements below.');
       return;
     }
 
@@ -164,6 +179,63 @@ function ResetPasswordContent() {
                 />
               </div>
 
+              {/* Password requirements checklist */}
+              <div className="space-y-2">
+                <p className="text-sm font-medium text-gray-700">Your password must include:</p>
+                <ul className="space-y-1 text-sm">
+                  <li className="flex items-center gap-2">
+                    {passwordRules.length ? (
+                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    ) : (
+                      <XCircle className="w-4 h-4 text-red-500" />
+                    )}
+                    <span className={passwordRules.length ? 'text-green-700' : 'text-gray-700'}>
+                      8-32 characters
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    {passwordRules.lowercase ? (
+                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    ) : (
+                      <XCircle className="w-4 h-4 text-red-500" />
+                    )}
+                    <span className={passwordRules.lowercase ? 'text-green-700' : 'text-gray-700'}>
+                      At least 1 lowercase letter
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    {passwordRules.uppercase ? (
+                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    ) : (
+                      <XCircle className="w-4 h-4 text-red-500" />
+                    )}
+                    <span className={passwordRules.uppercase ? 'text-green-700' : 'text-gray-700'}>
+                      At least 1 uppercase letter
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    {passwordRules.number ? (
+                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    ) : (
+                      <XCircle className="w-4 h-4 text-red-500" />
+                    )}
+                    <span className={passwordRules.number ? 'text-green-700' : 'text-gray-700'}>
+                      At least 1 number
+                    </span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    {passwordRules.special ? (
+                      <CheckCircle2 className="w-4 h-4 text-green-600" />
+                    ) : (
+                      <XCircle className="w-4 h-4 text-red-500" />
+                    )}
+                    <span className={passwordRules.special ? 'text-green-700' : 'text-gray-700'}>
+                      At least 1 special character
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
               {formError && (
                 <div className="p-3 bg-red-50 border border-red-200 rounded-md">
                   <p className="text-sm text-red-600">{formError}</p>
@@ -173,7 +245,7 @@ function ResetPasswordContent() {
               <Button
                 type="submit"
                 className="w-full bg-[#66a4a8] text-white hover:bg-[#5a9498]"
-                disabled={isSubmitting}
+                disabled={isSubmitting || !allRulesPass || newPassword !== confirmPassword}
               >
                 {isSubmitting ? (
                   <>
