@@ -45,11 +45,11 @@ function ResetPasswordContent() {
         setState('error');
         
         if (error.code === 'auth/expired-action-code') {
-          setErrorMessage('⚠️ Link Expired. This password reset link is invalid or has expired. Please request a new one.');
+          setErrorMessage('Link Expired. This password reset link is invalid or has expired. Please request a new one.');
         } else if (error.code === 'auth/invalid-action-code') {
-          setErrorMessage('⚠️ Link Expired. This password reset link is invalid or has expired. Please request a new one.');
+          setErrorMessage('Link Expired. This password reset link is invalid or has expired. Please request a new one.');
         } else {
-          setErrorMessage('⚠️ Link Expired. This password reset link is invalid or has expired. Please request a new one.');
+          setErrorMessage('Link Expired. This password reset link is invalid or has expired. Please request a new one.');
         }
       }
     };
