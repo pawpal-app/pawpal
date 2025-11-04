@@ -2,7 +2,7 @@
 title: "Back to School Blues: 5 Ways to Help Your Dog Cope with Separation Anxiety"
 date: "2025-08-25"
 author: "The Animo Team"
-coverImage: "/images/blog/dog-by-window.jpg"
+coverImage: "/images/blog/School/dog-by-window.jpg"
 excerpt: "After a summer of constant companionship, the sudden shift to a quiet, empty house can be jarring. Here are five ways to ease their back-to-school blues."
 ---
 
@@ -12,7 +12,7 @@ After a summer of constant companionship, the sudden shift to a quiet, empty hou
 
 The good news is that with a little patience and a few proactive steps, you can help your best friend adjust to the new normal. Here are five ways to ease their back-to-school blues.
 
-![A dog looking wistfully out a window as its family leaves](/images/blog/dog-by-window.jpg)
+![A dog looking wistfully out a window as its family leaves](/images/blog/School/dog-by-window.jpg)
 
 ## 🚪 1. Practice Your Departures
 
@@ -34,7 +34,7 @@ Designate a comfortable, safe space in your home that is exclusively for your do
 - **Special Treats:** Only give high-value treats (like peanut butter-filled KONG toys) in this spot
 - **Positive Association:** This helps them build a strong connection with the space
 
-![A cozy dog bed in a quiet corner with a few favorite toys](/images/blog/dog-safe-haven.jpg)
+![A cozy dog bed in a quiet corner with a few favorite toys](/images/blog/School/dog-safe-haven.jpg)
 
 > 🎯 **Goal:** Your dog should see this space as their personal retreat where they feel safe and relaxed.
 

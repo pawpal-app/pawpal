@@ -692,7 +692,7 @@ export default function Home() {
           {/* Social Media Icons */}
           <div className="flex justify-center space-x-4 sm:space-x-6 mb-6 sm:mb-8">
             <a 
-              href="https://www.tiktok.com/@getpawpal" 
+              href="https://www.tiktok.com/@getanimoapp" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#66a4a8] transition-colors"
@@ -703,7 +703,7 @@ export default function Home() {
               </svg>
             </a>
             <a 
-              href="https://www.instagram.com/get.pawpal/" 
+              href="https://www.instagram.com/getanimoapp/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#66a4a8] transition-colors"
@@ -714,7 +714,7 @@ export default function Home() {
               </svg>
             </a>
             <a 
-              href="https://x.com/getpawpal" 
+              href="https://x.com/getanimo_app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#66a4a8] transition-colors"

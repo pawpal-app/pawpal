@@ -2,7 +2,7 @@
 title: "The Ultimate Guide to Dog-Friendly Cary: 12 Spots Your Pup Will Love"
 date: "2025-09-25"
 author: "The Animo Team"
-coverImage: "/images/blog/dog-at-bond-park.jpg"
+coverImage: "/images/blog/Guide/dog-at-bond-park.jpg"
 excerpt: "Cary is an incredibly pet-friendly town, filled with green spaces and welcoming businesses. Here are 12 of the best spots to explore with your dog."
 ---
 
@@ -12,7 +12,7 @@ Cary is an incredibly pet-friendly town, filled with green spaces, welcoming bus
 
 Let's get exploring! 🐾
 
-![A happy dog on a walk at Bond Park in Cary, NC](/images/blog/dog-at-bond-park.jpg)
+![A happy dog on a walk at Bond Park in Cary, NC](/images/blog/Guide/dog-at-bond-park.jpg)
 
 ## 🌳 Top Parks & Greenways
 
@@ -66,7 +66,7 @@ Another local favorite, this trail offers beautiful **boardwalks over wetland ar
 
 > 🦆 **Wildlife Spotting:** Keep an eye out for ducks, herons, and other local wildlife!
 
-![A dog walking on a greenway boardwalk in Cary, NC](/images/blog/dog-on-greenway.jpg)
+![A dog walking on a greenway boardwalk in Cary, NC](/images/blog/Guide/dog-on-greenway.jpg)
 
 ## 🍺 Patios, Breweries & Bites
 
@@ -114,7 +114,7 @@ This popular bottle shop has a **fantastic, laid-back patio area** where you and
 - **Best For:** Wine tastings and craft beer exploration
 - **Location:** [120 E Chatham St, Cary, NC 27511](https://www.pharmacybottlebeverage.com/)
 
-![A dog relaxing on a brewery patio](/images/blog/dog-at-brewery.jpg)
+![A dog relaxing on a brewery patio](/images/blog/Guide/dog-at-brewery.jpg)
 
 ## 🛍️ Shops, Coffee & More
 

@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="color-scheme" content="light dark">
+    <meta name="supported-color-schemes" content="light dark">
     <title>Your Animo Verification Code</title>
     <style>
       body { 
@@ -90,6 +92,50 @@
         .code-box { padding: 24px 20px !important; }
         .btn-primary { padding: 14px 28px !important; font-size: 15px !important; }
       }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background: linear-gradient(135deg, #1a2d2f 0%, #0f1a1b 100%) !important;
+        }
+        .card {
+          background: #1e2d31 !important;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+        }
+        .code-box {
+          background: linear-gradient(135deg, #1f3d41 0%, #162a2e 100%) !important;
+          border: 2px solid #66a4a8 !important;
+          box-shadow: 0 4px 15px rgba(102, 164, 168, 0.4) !important;
+        }
+        .verification-code {
+          color: #e8f5f6 !important;
+        }
+        .code-box > div {
+          color: #e8f5f6 !important;
+        }
+        h2, h3 {
+          color: #e8f5f6 !important;
+        }
+        p {
+          color: #c9d9db !important;
+        }
+        .feature-item {
+          background: #1f3d41 !important;
+        }
+        td {
+          color: #c9d9db !important;
+        }
+        .border-top-light {
+          border-top-color: #2a4145 !important;
+        }
+        .text-body-dark {
+          color: #c9d9db !important;
+        }
+        .text-secondary-dark {
+          color: #a8bec1 !important;
+        }
+        .text-footer-dark {
+          color: #8ba3a6 !important;
+        }
+      }
     </style>
   </head>
   <body style="margin: 0; padding: 0; background: linear-gradient(135deg, #f8fcfc 0%, #eff3f3 100%);">
@@ -123,28 +169,28 @@
                     Your Verification Code
                   </h2>
                   
-                  <p style="color: #4a5568; margin: 0 0 30px 0; font-size: 17px; line-height: 1.7;">
+                  <p class="text-body-dark" style="color: #4a5568; margin: 0 0 30px 0; font-size: 17px; line-height: 1.7;">
                     Please use the following code to complete your sign-up:
                   </p>
                   
                   <!-- Verification Code Box -->
                   <div class="code-box">
-                    <div style="font-size: 36px; font-weight: 700; letter-spacing: 8px; color: #163031; font-family: 'Courier New', 'Monaco', monospace; line-height: 1.2;">
+                    <div class="verification-code" style="font-size: 36px; font-weight: 700; letter-spacing: 8px; color: #163031; font-family: 'Courier New', 'Monaco', monospace; line-height: 1.2;">
                       \(code)
                     </div>
                   </div>
 
-                  <p style="color: #718096; margin: 0 0 40px 0; font-size: 15px; line-height: 1.6; text-align: center;">
+                  <p class="text-secondary-dark" style="color: #718096; margin: 0 0 40px 0; font-size: 15px; line-height: 1.6; text-align: center;">
                     ⏰ This code will expire in 10 minutes. If you did not request this code, you can safely ignore this email.
                   </p>
 
                   <!-- What Happens Next Section -->
-                  <div style="margin-top: 45px; padding-top: 35px; border-top: 2px solid #eff3f3;">
+                  <div class="border-top-light" style="margin-top: 45px; padding-top: 35px; border-top: 2px solid #eff3f3;">
                     <h3 style="color: #163031; margin: 0 0 24px 0; font-size: 24px; font-weight: 700; line-height: 1.3;">
                       What happens next?
                     </h3>
                     
-                    <p style="color: #4a5568; margin: 0 0 24px 0; font-size: 16px; line-height: 1.6;">
+                    <p class="text-body-dark" style="color: #4a5568; margin: 0 0 24px 0; font-size: 16px; line-height: 1.6;">
                       After verifying, you can:
                     </p>
 
@@ -157,7 +203,7 @@
                                 <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 50%; text-align: center; line-height: 48px; color: #ffffff; font-size: 24px; font-weight: bold; box-shadow: 0 4px 12px rgba(102, 164, 168, 0.3);">🐾</div>
                               </td>
                               <td valign="middle">
-                                <p style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 500; line-height: 1.5;">Complete your pet's profile</p>
+                                <p class="text-body-dark" style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 500; line-height: 1.5;">Complete your pet's profile</p>
                               </td>
                             </tr>
                           </table>
@@ -171,7 +217,7 @@
                                 <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 50%; text-align: center; line-height: 48px; color: #ffffff; font-size: 24px; font-weight: bold; box-shadow: 0 4px 12px rgba(102, 164, 168, 0.3);">✨</div>
                               </td>
                               <td valign="middle">
-                                <p style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 500; line-height: 1.5;">Explore Animo's AI features</p>
+                                <p class="text-body-dark" style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 500; line-height: 1.5;">Explore Animo's AI features</p>
                               </td>
                             </tr>
                           </table>
@@ -185,7 +231,7 @@
                                 <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #66a4a8 0%, #2D6063 100%); border-radius: 50%; text-align: center; line-height: 48px; color: #ffffff; font-size: 24px; font-weight: bold; box-shadow: 0 4px 12px rgba(102, 164, 168, 0.3);">💡</div>
                               </td>
                               <td valign="middle">
-                                <p style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 500; line-height: 1.5;">Start getting personalized insights</p>
+                                <p class="text-body-dark" style="margin: 0; color: #2d3748; font-size: 16px; font-weight: 500; line-height: 1.5;">Start getting personalized insights</p>
                               </td>
                             </tr>
                           </table>
@@ -202,8 +248,8 @@
                   </div>
 
                   <!-- Footer -->
-                  <div style="margin-top: 45px; padding-top: 35px; border-top: 2px solid #eff3f3; text-align: center;">
-                    <p style="font-size: 13px; color: #a0aec0; margin: 0 0 8px 0; line-height: 1.6;">
+                  <div class="border-top-light" style="margin-top: 45px; padding-top: 35px; border-top: 2px solid #eff3f3; text-align: center;">
+                    <p class="text-footer-dark" style="font-size: 13px; color: #a0aec0; margin: 0 0 8px 0; line-height: 1.6;">
                       © 2025 PAWPAL LLC. All rights reserved.
                     </p>
                   </div>
