@@ -15,8 +15,8 @@ export function Header() {
   };
 
   return (
-    <header className="z-10 px-4 py-4 lg:px-8 bg-white/80 backdrop-blur-sm sticky top-0">
-      <nav className="flex items-center justify-between max-w-7xl mx-auto">
+    <header className="z-[100] px-4 py-4 lg:px-8 bg-white/80 backdrop-blur-sm sticky top-0">
+      <nav className="flex items-center justify-between max-w-7xl mx-auto relative z-[100]">
         {/* Logo - Also updated to be a Link to the homepage */}
         <Link href="/" className="flex items-center space-x-2" onClick={closeMenu}>
           <img
@@ -39,7 +39,7 @@ export function Header() {
 
         {/* Mobile Hamburger Menu Button */}
         <button
-          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1"
+          className="md:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1 relative z-[101]"
           onClick={toggleMenu}
           aria-label="Toggle navigation menu"
         >
@@ -49,9 +49,18 @@ export function Header() {
         </button>
       </nav>
 
+      {/* Mobile Menu Backdrop */}
+      {isMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-[99] md:hidden"
+          onClick={closeMenu}
+          aria-hidden="true"
+        />
+      )}
+
       {/* Mobile Navigation Menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <div className="pt-4 pb-6 space-y-4 border-t border-gray-200 mt-4">
+      <div className={`md:hidden transition-all duration-300 ease-in-out relative z-[100] ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className="pt-4 pb-6 space-y-4 border-t border-gray-200 mt-4 bg-white/95 backdrop-blur-sm relative z-[100]">
           <Link 
             href="/" 
             className="block text-gray-700 hover:text-[#345045] transition-colors py-2"
