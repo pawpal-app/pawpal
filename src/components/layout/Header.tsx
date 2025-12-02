@@ -59,8 +59,8 @@ export function Header() {
       )}
 
       {/* Mobile Navigation Menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out relative z-[100] ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <div className="pt-4 pb-6 space-y-4 border-t border-gray-200 mt-4 bg-white/95 backdrop-blur-sm relative z-[100]">
+      <div className={`md:hidden transition-all duration-300 ease-in-out relative z-[100] ${isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className="pt-4 pb-6 space-y-4 border-t border-gray-200 mt-4 relative z-[100]">
           <Link 
             href="/" 
             className="block text-gray-700 hover:text-[#345045] transition-colors py-2"
