@@ -24,12 +24,12 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "Animo has made my rescue kitten's care so much easier. The AI chat helps me understand my kitten's needs better.",
-    author: "Naina A.",
-    role: "Rescue kitten owner",
-    initials: "NA",
-    gradient: "from-blue-400 to-teal-500",
-    image: "/images/testimonials/naina.jpg"
+    quote: "The pet diary feature is amazing! I love sharing updates with friends and liking and commenting on their updates.",
+    author: "Sharon G.",
+    role: "Dog owner",
+    initials: "SG",
+    gradient: "from-purple-400 to-indigo-500",
+    image: "/images/testimonials/sharon.jpg"
   },
   {
     id: 3,
@@ -42,21 +42,21 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 4,
-    quote: "The pet diary feature is amazing! I love tracking my rescue dog's progress and sharing updates with friends.",
-    author: "Jessica T.",
-    role: "Pet rescue volunteer",
-    initials: "JT",
-    gradient: "from-purple-400 to-indigo-500",
-    //image: "/images/testimonials/jessica.jpg"
+    quote: "Animo has made my rescue kitten's care so much easier. The AI chat helps me understand my kitten's needs better.",
+    author: "Naina A.",
+    role: "Rescue kitten owner",
+    initials: "NA",
+    gradient: "from-blue-400 to-teal-500",
+    image: "/images/testimonials/naina.jpg"
   },
   {
     id: 5,
-    quote: "Finally, an app that understands all pets! My rabbit and bearded dragon both get personalized care plans.",
-    author: "Alex M.",
-    role: "Exotic pet owner",
+    quote: "I was stunned to learn how many things I missed doing for my fish. Animo helped me stay on top of everything! I can't wait to try more features!",
+    author: "August M.",
+    role: "Fish aquarium owner",
     initials: "AM",
     gradient: "from-yellow-400 to-orange-500",
-    //image: "/images/testimonials/alex.jpg"  
+    image: "/images/testimonials/august.jpg"  
   }
 ];
 
@@ -111,13 +111,13 @@ export function TestimonialsSection() {
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <div className="relative w-[350px] sm:w-[500px] flex-shrink-0 group">
-      <div className="h-full bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-[2rem] p-6 sm:p-8 hover:bg-white hover:border-[#66a4a8]/30 hover:shadow-xl transition-all duration-300">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+    <div className="relative w-[350px] sm:w-[600px] flex-shrink-0 group">
+      <div className="h-full bg-white/80 backdrop-blur-md border border-gray-200/50 rounded-[2.5rem] p-6 sm:p-10 hover:bg-white hover:border-[#66a4a8]/30 hover:shadow-xl transition-all duration-300">
+        <div className="flex flex-col sm:flex-row items-center sm:items-center gap-8">
           
           {/* Photo / Avatar */}
           <div className="flex-shrink-0 relative">
-            <div className={`relative rounded-2xl overflow-hidden shadow-lg transform group-hover:scale-105 transition-transform duration-300 ${testimonial.image ? 'w-24 h-24 sm:w-28 sm:h-28' : 'w-20 h-20 sm:w-24 sm:h-24'}`}>
+            <div className={`relative rounded-3xl overflow-hidden shadow-lg transform group-hover:scale-105 transition-transform duration-300 ${testimonial.image ? 'w-32 h-32 sm:w-40 sm:h-40' : 'w-24 h-24 sm:w-32 sm:h-32'}`}>
               {testimonial.image ? (
                 <Image 
                   src={testimonial.image} 
@@ -126,7 +126,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                   className="object-cover"
                 />
               ) : (
-                <div className={`w-full h-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center text-white text-2xl font-bold`}>
+                <div className={`w-full h-full bg-gradient-to-br ${testimonial.gradient} flex items-center justify-center text-white text-4xl font-bold`}>
                   {testimonial.initials}
                 </div>
               )}
