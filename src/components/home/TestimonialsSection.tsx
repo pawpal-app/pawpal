@@ -57,6 +57,15 @@ const testimonials: Testimonial[] = [
     initials: "AM",
     gradient: "from-yellow-400 to-orange-500",
     image: "/images/testimonials/august.jpg"  
+  },
+  {
+    id: 6,
+    quote: "I love keeping track of my cat's daily diary. I can look back and see what Leo did every day!",
+    author: "Mikayla M.",
+    role: "Kitten owner",
+    initials: "MM",
+    gradient: "from-blue-400 to-teal-500",
+    image: "/images/testimonials/mikayla.jpg"
   }
 ];
 
